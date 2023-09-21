@@ -1,25 +1,28 @@
 # Tango Dark from windows terminal
+# converted from
+# https://github.com/microsoft/terminal/blob/fc4a37ee9189f2f7335ab942d50381a38a03acf2/src/cascadia/TerminalSettingsModel/defaults.json#L239
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xd3d7cf'
+    background: '#000000'
+    foreground: '#D3D7CF'
+    cursorColor: '#FFFFFF'
     
   normal:
-    black: '0x000000'
-    red: '0xcc0000'
-    green: '0x4e9a06'
-    yellow: '0xc4a000'
-    blue: '0x3465a4'
-    magenta: '0x75507b'
-    cyan: '0x06989a'
-    white: '0xd3d7cf'
+    black: '#000000'
+    red: '#CC0000'
+    green: '#4E9A06'
+    yellow: '#C4A000'
+    blue: '#3465A4'
+    magenta: '#75507B'
+    cyan: '#06989A'
+    white: '#D3D7CF'
 
   bright:
-    black: '0x555753'
-    red: '0xef2929'
-    green: '0x8ae234'
-    yellow: '0xfce94f'
-    blue: '0x729fcf'
-    magenta: '0xad7fa8'
-    cyan: '0x34e2e2'
-    white: '0xeeeeec'
+    black: '#555753'
+    red: '#EF2929'
+    green: '#8AE234'
+    yellow: '#FCE94F'
+    blue: '#729FCF'
+    magenta: '#AD7FA8'
+    cyan: '#34E2E2'
+    white: '#EEEEEC'
