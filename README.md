@@ -2,32 +2,29 @@
 
 - see dotfiles/.tmux.conf for instructions for tmux setup
 ```
-pwd = ~/
-mv .tmux.conf ~/dotfiles/.
-ln -s ~/dotfiles/.tmux.conf .tmux.conf
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 .tmux.conf -> /home/pbrehm/dotfiles/.tmux.conf
 ```
 
 ```
-pwd = ~/.config/
-mv nvim ~/dotfiles/.
-ln -s ~/dotfiles/nvim nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
 nvim -> /home/pbrehm/dotfiles/nvim
 ```
 
 - using oh my zsh with powerlevel10k theme
 ```
-pwd = ~/
-mv .zshrc ~/dotfiles/.
-ln -s ~/dotfiles/.zshrc .zshrc
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 .zshrc -> /home/pbrehm/dotfiles/.zshrc
 ```
 
 ```
-pwd = ~/
-mv .p10k.zsh ~/dotfiles/.
-ln -s ~/dotfiles/.p10k.zsh .p10k.zsh
+ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 .p10k.zsh -> /home/pbrehm/dotfiles/.p10k.zsh
+```
+
+```
+ln -s ~/dotfiles/alacrity/.alacrity ~/.alacritty
+.alacritty -> /home/pbrehm/dotfiles/alacritty/.alacritty
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
