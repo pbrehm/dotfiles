@@ -10,3 +10,7 @@ pwd = ~/.config/
 ln -s ~/dotfiles/nvim nvim
 makes following link
 nvim -> /home/pbrehm/dotfiles/nvim
+
+
+see dotfiles/.tmux.conf for instructions for tmux setup
+
