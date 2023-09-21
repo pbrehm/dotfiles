@@ -18,14 +18,18 @@ nvim -> /home/pbrehm/dotfiles/nvim
 - using oh my zsh with powerlevel10k theme
 ```
 pwd = ~/
-mv .zshrc ~/.dotfiles/.
+mv .zshrc ~/dotfiles/.
 ln -s ~/dotfiles/.zshrc .zshrc
 .zshrc -> /home/pbrehm/dotfiles/.zshrc
 ```
 
 ```
 pwd = ~/
+mv .p10k.zsh ~/dotfiles/.
 ln -s ~/dotfiles/.p10k.zsh .p10k.zsh
 .p10k.zsh -> /home/pbrehm/dotfiles/.p10k.zsh
 ```
+In windows terminal, I like "Tango dark"
 
+get nerd fonts here
+https://github.com/ryanoasis/nerd-fonts
