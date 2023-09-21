@@ -29,6 +29,9 @@ mv .p10k.zsh ~/dotfiles/.
 ln -s ~/dotfiles/.p10k.zsh .p10k.zsh
 .p10k.zsh -> /home/pbrehm/dotfiles/.p10k.zsh
 ```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
 In windows terminal, I like "Tango dark"
 
 get nerd fonts here
