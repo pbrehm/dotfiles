@@ -14,7 +14,7 @@ local opts = {
     null_ls.builtins.formatting.sql_formatter,
 
     -- diagnositcs and formatting
-    null_ls.builtins.formatting.sqlfluff.with(commonConfig),
+    -- null_ls.builtins.formatting.sqlfluff.with(commonConfig),
     null_ls.builtins.diagnostics.sqlfluff.with(commonConfig),
   },
 }
