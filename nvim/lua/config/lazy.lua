@@ -32,18 +32,21 @@ if vim.fn.has("wsl") == 1 then
 end
 
 -- wsl clipboard support for no WSLg
--- vim.g.clipboard = {
---   name = "win32yank-wsl",
---   copy = {
---     ["+"] = "win32yank.exe -i --crlf",
---     ["*"] = "win32yank.exe -i --crlf",
---   },
---   paste = {
---     ["+"] = "win32yank.exe -o --lf",
---     ["*"] = "win32yank.exe -o --lf",
---   },
---   cache_enabled = true,
--- }
+-- must have win32yank.exe in path
+-- if vim.fn.has("wsl") == 1 then
+--   vim.g.clipboard = {
+--     name = "win32yank-wsl",
+--     copy = {
+--       ["+"] = "win32yank.exe -i --crlf",
+--       ["*"] = "win32yank.exe -i --crlf",
+--     },
+--     paste = {
+--       ["+"] = "win32yank.exe -o --lf",
+--       ["*"] = "win32yank.exe -o --lf",
+--     },
+--     cache_enabled = true,
+--   }
+-- end
 
 require("lazy").setup({
   spec = {
