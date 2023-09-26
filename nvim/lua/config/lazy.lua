@@ -2,52 +2,56 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+    lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- -- wsl clipboard support with WSLg
--- if vim.fn.has("wsl") == 1 then
---   if vim.fn.executable("wl-copy") == 0 then
---     print("wl-clipboard not found, clipboard integration won't work")
---   else
---     vim.g.clipboard = {
---       name = "wl-clipboard (wsl)",
---       copy = {
---         ["+"] = "wl-copy --foreground --type text/plain",
---         ["*"] = "wl-copy --foreground --primary --type text/plain",
---       },
---       paste = {
---         ["+"] = function()
---           return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { "" }, 1) -- '1' keeps empty lines
---         end,
---         ["*"] = function()
---           return vim.fn.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', { "" }, 1)
---         end,
---       },
---       cache_enabled = true,
---     }
---   end
--- end
+-- wsl clipboard support with WSLg
+if vim.fn.has("wsl") == 1 then
+  if vim.fn.executable("wl-copy") == 0 then
+    print("wl-clipboard not found, clipboard integration won't work")
+  else
+    vim.g.clipboard = {
+      name = "wl-clipboard (wsl)",
+      copy = {
+        ["+"] = "wl-copy --foreground --type text/plain",
+        ["*"] = "wl-copy --foreground --primary --type text/plain",
+      },
+      paste = {
+        ["+"] = function()
+          return vim.fn.systemlist('wl-paste --no-newline|sed -e "s/\r$//"', { "" }, 1) -- '1' keeps empty lines
+        end,
+        ["*"] = function()
+          return vim.fn.systemlist('wl-paste --primary --no-newline|sed -e "s/\r$//"', { "" }, 1)
+        end,
+      },
+      cache_enabled = true,
+    }
+  end
+end
 
--- wsl clipboard support
-vim.g.clipboard = {
-  name = "win32yank-wsl",
-  copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf",
-  },
-  paste = {
-    ["+"] = "win32yank.exe -o --lf",
-    ["*"] = "win32yank.exe -o --lf",
-  },
-  cache_enabled = true,
-}
+-- wsl clipboard support for no WSLg
+-- vim.g.clipboard = {
+--   name = "win32yank-wsl",
+--   copy = {
+--     ["+"] = "win32yank.exe -i --crlf",
+--     ["*"] = "win32yank.exe -i --crlf",
+--   },
+--   paste = {
+--     ["+"] = "win32yank.exe -o --lf",
+--     ["*"] = "win32yank.exe -o --lf",
+--   },
+--   cache_enabled = true,
+-- }
 
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins"
+    },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
