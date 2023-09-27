@@ -1,12 +1,14 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    dependencies = {
-      -- TODO: figure out why "coco-platform/vscode-jest-snippets" works when "andys8/vscode-jest-snippets" doesn't
-      -- I see every andys8 snippet has a source = "source.js" but coco doesn't. 🤔
-
-      -- "andys8/vscode-jest-snippets",
-      "coco-platform/vscode-jest-snippets"
-    }
+    -- dependencies = {
+    -- Example of how to add vscode snippets
+    --   "rafamadriz/friendly-snippets",
+    -- },
+    config = function()
+      -- andys8/vscode-jest-snippets has "source" = "source.js" in every snippet and that stops it from working
+      -- the following is a copy of the repo I made that removes this
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = "./snippets/vscode-jest-snippets-custom" })
+    end,
   }
 }
