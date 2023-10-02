@@ -12,6 +12,10 @@ local opts = {
   sources = {
     -- Just a universal whitewpace formatter
     null_ls.builtins.formatting.sql_formatter,
+    -- prettierd for nice formatting
+    null_ls.builtins.formatting.prettierd,
+    -- followed by eslint_d to fix linting issues that may pop up
+    null_ls.builtins.formatting.eslint_d,
 
     -- diagnositcs and formatting
     -- null_ls.builtins.formatting.sqlfluff.with(commonConfig),
