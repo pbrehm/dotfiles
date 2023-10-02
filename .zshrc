@@ -122,6 +122,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 alias vim="nvim"
 alias vi="nvim"
+alias lg="lazygit"
 
 # I-beam and block for vi insert mode and normal mode
 zle-keymap-select () {
