@@ -34,8 +34,12 @@ In windows terminal, I like "Tango dark"
 get nerd fonts here
 https://github.com/ryanoasis/nerd-fonts
 
-vscode neovim config based on 
+vscode neovim config based on
 https://www.youtube.com/watch?v=g4dXZ0RQWdw
 
 settings.vim: https://github.com/LunarVim/LunarVim/blob/4625145d0278d4a039e55c433af9916d93e7846a/vscode/settings.vim
 vscode keybindings and setting: https://github.com/LunarVim/LunarVim/tree/4625145d0278d4a039e55c433af9916d93e7846a/utils/vscode_config
+
+windows startup location
+%appdata%\Microsoft\Windows\Start Menu\Programs\Startup
+
