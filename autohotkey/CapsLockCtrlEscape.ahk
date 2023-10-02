@@ -18,6 +18,6 @@
 	}
 }
 
-; remap Ctrl to capslock
-Ctrl::CapsLock
+; remap Left Ctrl to capslock
+LCtrl::CapsLock
 
