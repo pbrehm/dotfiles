@@ -1,4 +1,8 @@
 # dotfiles
+wl-clipboard required for wsl wayland clipboard support
+```
+sudo apt install wl-clipboard
+```
 
 - see dotfiles/.tmux.conf for instructions for tmux setup
 ```
