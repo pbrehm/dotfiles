@@ -4,3 +4,4 @@
 
 -- don't hide markup ticks or json quotes
 vim.opt.conceallevel = 0
+vim.g.autoformat = false
