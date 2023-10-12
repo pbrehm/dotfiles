@@ -14,5 +14,3 @@ vim.api.nvim_set_keymap("x", "DD", '"_dd', { noremap = true })
 -- remap P in visual mode to delete then paste to not pollute registers
 vim.api.nvim_set_keymap("x", "P", '"_dP', { noremap = true })
 
-
-vim.api.nvim_set_keymap("n", "<leader>ua", ":ASToggle<CR>", { desc = "Toggle Auto Save" })
