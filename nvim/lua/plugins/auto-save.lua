@@ -12,6 +12,8 @@ return {
           return ("")
         end,
       },
+      -- this way if we do a refactor changes in other buffers will get auto saved
+      write_all_buffers = true
     }
   }
 }
