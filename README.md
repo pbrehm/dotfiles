@@ -47,3 +47,6 @@ vscode keybindings and setting: https://github.com/LunarVim/LunarVim/tree/462514
 windows startup location
 %appdata%\Microsoft\Windows\Start Menu\Programs\Startup
 
+Alacritty bolder font on mac os on retina screen fix.
+https://github.com/alacritty/alacritty/commit/2a676dfad837d1784ed0911d314bc263804ef4ef
+$ defaults write org.alacritty -int 0
