@@ -124,9 +124,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias lg="lazygit"
 
-alias lazyvim="NVIM_APPNAME=lazyvim nvim"
-alias lv="lazyvim"
-
 # I-beam and block for vi insert mode and normal mode
 zle-keymap-select () {
 if [ $KEYMAP = vicmd ]; then
