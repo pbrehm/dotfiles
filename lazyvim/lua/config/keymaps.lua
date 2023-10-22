@@ -14,3 +14,15 @@ vim.api.nvim_set_keymap("x", "DD", '"_dd', { noremap = true })
 -- remap P in visual mode to delete then paste to not pollute registers
 vim.api.nvim_set_keymap("x", "P", '"_dP', { noremap = true })
 
+
+-- Possession keymaps
+-- Define a function to get the directory name from the current working directory (CWD)
+function GetCWDName()
+  local cwd = vim.fn.getcwd()
+  local parts = vim.fn.split(cwd, "/")
+  return parts[#parts]
+end
+
+vim.api.nvim_set_keymap("n", "<leader>Ss", [[:lua vim.cmd('execute "SSave ' .. GetCWDName() .. '"')<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Sl", [[:lua vim.cmd('execute "SLoad ' .. GetCWDName() .. '"')<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>St", [[<cmd>lua require('telescope').extensions.possession.list()<cr>]], { noremap = true, silent = true })
