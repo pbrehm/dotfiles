@@ -1,10 +1,15 @@
+local function session_name()
+  return require("possession.session").session_name or ""
+end
+
 return {
   {
     "nvim-lualine/lualine.nvim",
     -- disable clock since tmux has it
     opts = {
       sections = {
-        lualine_z = {},
+        -- lualine_a = {session_name},
+        lualine_z = {session_name},
       },
     },
   },
