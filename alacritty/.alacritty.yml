@@ -10,7 +10,9 @@
 # to the user's home directory starting with `~/`.
 import:
 #  - /path/to/alacritty.ymlimport:
-  - ~/dotfiles/alacritty/win_tango_dark.yaml
+#  - ~/dotfiles/alacritty/win_tango_dark.yaml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+# https://github.com/catppuccin/alacritty
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
