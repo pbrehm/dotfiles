@@ -1,13 +1,8 @@
 return {
   -- add github theme
   { "projekt0n/github-nvim-theme" },
-  { "rebelot/kanagawa.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
-  { "stevedylandev/flexoki-nvim", name = "flexoki" },
   { "rose-pine/neovim", name = "rose-pine" },
   { "Mofiqul/vscode.nvim" },
-  { "bluz70/vim-nightfly-colors", name = "nightfly" },
-  { "bluz70/vim-moonfly-colors", name = "moonfly" },
   -- {
   --   "olimorris/onedarkpro.nvim",
   -- },
@@ -17,11 +12,11 @@ return {
     opts = {
       color_overrides = {
         mocha = {
-          base = "#111111",
-          mantle = "#111111",
-          crust = "#111111",
-          -- base = "#000000",
-          -- mantle = "#000000",
+          -- base = "#111111",
+          -- mantle = "#111111",
+          -- crust = "#111111",
+          base = "#000000",
+          mantle = "#000000",
           -- crust = "#000000",
         },
       },
@@ -55,9 +50,9 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "github_dark_high_contrast",
-      colorscheme = "onedark",
+      -- colorscheme = "onedark",
       -- colorscheme = "tokyonight-night",
-      -- colorscheme = "catppuccin",
+      colorscheme = "catppuccin",
       -- colorscheme = "rose-pine"
     },
   },
