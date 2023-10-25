@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "os": "#a9b1d6",
+    "pink": "#F5BDE6",
+    "lavender": "#B7BDF8",
+    "blue": "#7aa2f7",
+    "wight": "#FFFFFF",
+    "text": "#494D64",
+    "yellow": "#e0af68",
+    "mauve": "#cba6f7",
+    "peach": "#ff9e64",
+    "green": "#9ece6a",
+    "light": "#cdd6f4",
+    "darktext": "#313244",
+    "red": "#f7768e"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:light",
+          "foreground": "p:darktext",
+          "powerline_symbol": "\ue0b4",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "{{.Icon}}",
+          "type": "os"
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:darktext",
+          "properties": {
+            "folder_icon": "\ue5fe",
+            "home_icon": "~",
+            "style": "full"
+          },
+          "powerline_symbol": "\ue0b4",
+          "style": "powerline",
+          "template": " {{ .Path }}",
+          "type": "path"
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4 ",
+          "foreground": "p:darktext",
+          "background": "p:green",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}",
+            "{{ if gt .Ahead 0 }}p:mauve{{ end }}",
+            "{{ if gt .Behind 0 }}p:mauve{{ end }}"
+          ],
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} 󰴮 {{ .StashCount }}{{ end }}",
+          "properties": {
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "untracked_modes": {
+              "/Users/user/Projects/oh-my-posh/": "no"
+            }
+          }
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "❯"
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
