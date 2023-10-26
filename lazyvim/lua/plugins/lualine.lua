@@ -9,8 +9,9 @@ return {
     opts = {
       options = {
         section_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
         component_separators = "|",
-      },
+      },-- █
       sections = {
         -- lualine_a = {session_name},
         lualine_z = { session_name },
