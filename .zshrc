@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -147,4 +147,4 @@ KEYTIMEOUT=1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/custom-one-dark.json')"
 # eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/theme.json')"
-eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/tokyo-theme.json')"
+# eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/tokyo-theme.json')"

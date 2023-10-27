@@ -41,7 +41,7 @@ return {
     "navarasu/onedark.nvim",
     opts = {
       -- style = "deep",
-      style = "darker",
+      -- style = "darker",
       -- colors = {
       -- black = "#000000",
       -- bg0 = "#111111",
@@ -56,10 +56,10 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "github_dark_high_contrast",
-      -- colorscheme = "onedark",
+      colorscheme = "onedark",
       -- colorscheme = "tokyonight-moon",
       -- colorscheme = "tokyonight-storm",
-      colorscheme = "tokyonight-night",
+      -- colorscheme = "tokyonight-night",
       -- colorscheme = "catppuccin",
       -- colorscheme = "rose-pine"
     },
