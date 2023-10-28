@@ -26,3 +26,12 @@ end
 vim.api.nvim_set_keymap("n", "<leader>Ss", [[:lua vim.cmd('execute "SSave ' .. GetCWDName() .. '"')<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>Sl", [[:lua vim.cmd('execute "SLoad ' .. GetCWDName() .. '"')<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>St", [[<cmd>lua require('telescope').extensions.possession.list()<cr>]], { noremap = true, silent = true })
+
+
+-- when when pressing escape to exit insert mode sometimes its easy to pres esc+j which is the same as alt+J
+-- this results in moving the line. I just unbind these in insert and visual mode
+-- since I only need to move lines in normal mode
+vim.api.nvim_set_keymap("i", "<A-j>", "", { desc = "Move down" })
+vim.api.nvim_set_keymap("i", "<A-k>", "", { desc = "Move up" })
+vim.api.nvim_set_keymap("v", "<A-j>", "", { desc = "Move down" })
+vim.api.nvim_set_keymap("v", "<A-k>", "", { desc = "Move up" })
