@@ -6,7 +6,21 @@ return {
   -- {
   --   "olimorris/onedarkpro.nvim",
   -- },
-  { "rebelot/kanagawa.nvim" },
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      colors = {
+        theme = {
+          wave = {
+            ui = {
+              -- override gutter to be same as bg
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
+    },
+  },
   {
     "folke/tokyonight.nvim",
     opts = {
@@ -62,7 +76,7 @@ return {
       -- colorscheme = "tokyonight-night",
       -- colorscheme = "catppuccin",
       -- colorscheme = "rose-pine"
-      colorscheme = "kanagawa",
+      colorscheme = "kanagawa-wave",
     },
   },
 }
