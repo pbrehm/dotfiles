@@ -1,6 +1,30 @@
 return {
   -- add github theme
-  { "projekt0n/github-nvim-theme" },
+  {
+    "projekt0n/github-nvim-theme",
+    config = function()
+      require("github-theme").setup({
+        options = {
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          },
+          inverse = {
+            match_paren = true,
+          },
+        },
+        palettes = {
+          github_dark = require("github-theme.palette").load("github_dark_dimmed"),
+        },
+        specs = {
+          github_dark = require("github-theme.spec").load("github_dark_dimmed"),
+        },
+      })
+
+      -- vim.cmd("colorscheme github_dark")
+    end,
+  },
   { "rose-pine/neovim", name = "rose-pine" },
   { "Mofiqul/vscode.nvim" },
   -- {
@@ -70,13 +94,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "github_dark_dimmed",
-      -- colorscheme = "onedark",
-      -- colorscheme = "tokyonight-moon",
-      -- colorscheme = "tokyonight-storm",
-      -- colorscheme = "tokyonight-night",
-      -- colorscheme = "catppuccin",
-      -- colorscheme = "rose-pine"
+    --   -- colorscheme = "github_dark_dimmed",
+    --   -- colorscheme = "onedark",
+    --   -- colorscheme = "tokyonight-moon",
+    --   -- colorscheme = "tokyonight-storm",
+    --   -- colorscheme = "tokyonight-night",
+    --   -- colorscheme = "catppuccin",
+    --   -- colorscheme = "rose-pine"
       colorscheme = "kanagawa-wave",
     },
   },
