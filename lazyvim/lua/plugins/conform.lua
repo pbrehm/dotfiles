@@ -20,6 +20,7 @@ return {
         ["markdown.mdx"] = { "prettierd", "eslint_d" },
         ["graphql"] = { "prettierd", "eslint_d" },
         ["handlebars"] = { "prettierd", "eslint_d" },
+        ["sql"] = { "sql_formatter" },
       },
     },
   },
