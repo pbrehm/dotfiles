@@ -1,6 +1,6 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  config = function()
-      require("telescope").load_extension("possession")
-  end,
+  -- "nvim-telescope/telescope.nvim",
+  -- config = function()
+  --     require("telescope").load_extension("possession")
+  -- end,
 }
