@@ -10,8 +10,8 @@
 # to the user's home directory starting with `~/`.
 import:
 #  - /path/to/alacritty.ymlimport:
-#  - ~/dotfiles/alacritty/win_tango_dark.yaml
- - ~/dotfiles/alacritty/onedark.yaml
+ - ~/dotfiles/alacritty/win_tango_dark.yaml
+ # - ~/dotfiles/alacritty/onedark.yaml
   # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 # https://github.com/catppuccin/alacritty
 
