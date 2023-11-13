@@ -6,7 +6,7 @@ return {
         event = "vim_buffer_enter",
         handler = function()
           if vim.bo.filetype == "neo-tree" then
-            vim.cmd([[setlocal number relativenumber cursorlineopt=number]])
+            vim.cmd([[setlocal number relativenumber cursorlineopt=both]])
           end
         end,
       },
