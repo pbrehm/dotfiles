@@ -6,8 +6,8 @@ return {
         separator = "", -- altarnative because regular italic ones looks super fat
       },
       defaults = {
-        ["<leader>h"] = { name = "+harpoon" },
-        ["<leader>S"] = { name = "+Session"}
+        ["<leader>h"] = { name = "+[h]arpoon" },
+        ["<leader>S"] = { name = "+[S]ession"},
         -- ["<leader>r"] = { name = "+[r]efactor"}
       },
     },
