@@ -1,3 +1,11 @@
+-- Possession keymaps
+-- Define a function to get the directory name from the current working directory (CWD)
+function GetCWDName()
+  local cwd = vim.fn.getcwd()
+  local parts = vim.fn.split(cwd, "/")
+  return parts[#parts]
+end
+
 return {
   { "folke/persistence.nvim", enabled = false },
   -- {
@@ -32,6 +40,29 @@ return {
             rename = { n = "<c-r>", i = "<c-r>" },
           },
         },
+      },
+    },
+    keys = {
+      {
+        "<leader>Ss",
+        function()
+          vim.cmd('execute "SSave ' .. GetCWDName() .. '"')
+        end,
+        desc = "SSave CWD",
+      },
+      {
+        "<leader>Sl",
+        function()
+          vim.cmd('execute "SLoad ' .. GetCWDName() .. '"')
+        end,
+        desc = "SLoad CWD",
+      },
+      {
+        "<leader>St",
+        function()
+          require("telescope").extensions.possession.list()
+        end,
+        desc = "Session load via telescope",
       },
     },
   },

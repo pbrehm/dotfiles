@@ -7,6 +7,7 @@ return {
       },
       defaults = {
         ["<leader>h"] = { name = "+harpoon" },
+        ["<leader>S"] = { name = "+Session"}
       },
     },
   },
