@@ -8,6 +8,7 @@ return {
       defaults = {
         ["<leader>h"] = { name = "+harpoon" },
         ["<leader>S"] = { name = "+Session"}
+        -- ["<leader>r"] = { name = "+[r]efactor"}
       },
     },
   },
