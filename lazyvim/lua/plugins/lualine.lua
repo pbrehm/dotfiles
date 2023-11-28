@@ -1,6 +1,6 @@
-local function session_name()
-  return require("possession.session").session_name or ""
-end
+-- local function session_name()
+--   return require("possession.session").session_name or ""
+-- end
 
 return {
   {
@@ -14,7 +14,8 @@ return {
       },-- █
       sections = {
         -- lualine_a = {session_name},
-        lualine_z = { session_name },
+        -- lualine_z = { session_name },
+        lualine_z = { "" },
       },
     },
   },
