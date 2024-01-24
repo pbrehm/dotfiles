@@ -1,0 +1,33 @@
+ import = [
+  "C:\\Users\\USERNAME_HERE\\Documents\\Alacritty\\win_tango_dark.toml"
+]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 13.5
+
+  [font.normal]
+  family = "CaskaydiaCove Nerd Font Mono"
+  style = "Regular"
+
+  [font.bold]
+  family = "CaskaydiaCove Nerd Font Mono"
+  style = "Bold"
+
+  [font.italic]
+  family = "CaskaydiaCove Nerd Font Mono"
+  style = "Italic"
+
+  [font.bold_italic]
+  family = "CaskaydiaCove Nerd Font Mono"
+  style = "Bold Italic"
+
+[shell]
+program = "ubuntu.exe"
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control"
+chars = "\u0000"
