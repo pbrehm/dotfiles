@@ -1,5 +1,16 @@
 return {
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "prettierd",
+        "eslint_d",
+        "sql-formatter",
+        "eslint-lsp"
+      },
+    },
+  },
+  {
     "stevearc/conform.nvim",
     opts = {
       -- install eslint-lsp via mason if you want to see eslint diagnostics
