@@ -51,8 +51,6 @@ Alacritty bolder font on mac os on retina screen fix.
 https://github.com/alacritty/alacritty/commit/2a676dfad837d1784ed0911d314bc263804ef4ef
 $ defaults write org.alacritty -int 0
 
+lazyvim has my custom lazyvim setup.
 
-TODO:
-Mason. configure which servers are installed in config rather then installing them manually
-
-trying out using vtsls instead of typescript-language-server
+nvim has custom nvim setup based on https://github.com/LunarVim/Launch.nvim
