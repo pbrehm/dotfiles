@@ -25,7 +25,7 @@ return {
       -- vim.cmd("colorscheme github_dark")
     end,
   },
-  { "rose-pine/neovim", name = "rose-pine" },
+  { "rose-pine/neovim",   name = "rose-pine" },
   { "Mofiqul/vscode.nvim" },
   -- {
   --   "olimorris/onedarkpro.nvim",
@@ -91,17 +91,21 @@ return {
       -- },
     },
   },
+  -- {
+  --   "LunarVim/darkplus.nvim"
+  -- },
   {
     "LazyVim/LazyVim",
     opts = {
-    --   -- colorscheme = "github_dark_dimmed",
-    --   -- colorscheme = "onedark",
-    --   -- colorscheme = "tokyonight-moon",
-    --   -- colorscheme = "tokyonight-storm",
-    --   -- colorscheme = "tokyonight-night",
-    --   -- colorscheme = "catppuccin",
-    --   -- colorscheme = "rose-pine"
+      --   -- colorscheme = "github_dark_dimmed",
+      --   -- colorscheme = "onedark",
+      --   -- colorscheme = "tokyonight-moon",
+      --   -- colorscheme = "tokyonight-storm",
+      --   -- colorscheme = "tokyonight-night",
+      --   -- colorscheme = "catppuccin",
+      --   -- colorscheme = "rose-pine"
       colorscheme = "kanagawa-wave",
+      -- colorscheme = "darkplus",
     },
   },
 }
