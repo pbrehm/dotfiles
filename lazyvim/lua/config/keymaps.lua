@@ -22,3 +22,12 @@ vim.api.nvim_set_keymap("i", "<A-j>", "", { desc = "Move down" })
 vim.api.nvim_set_keymap("i", "<A-k>", "", { desc = "Move up" })
 vim.api.nvim_set_keymap("v", "<A-j>", "", { desc = "Move down" })
 vim.api.nvim_set_keymap("v", "<A-k>", "", { desc = "Move up" })
+
+
+-- center automatically when looking through highlighted searches
+vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "N", "Nzz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "*", "*zz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "#", "#zz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g*", "g*zz", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g#", "g#zz", { noremap = true, silent = true })
