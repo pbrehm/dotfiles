@@ -6,5 +6,6 @@ spec "user.colorschemes.kanagawa"
 -- spec "user.colorschemes.darkplus"
 
 spec "user.neotree"
+spec "user.whichkey"
 
 require "user.config.lazy"

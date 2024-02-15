@@ -4,9 +4,33 @@ local M =
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",   -- not strictly required, but recommended
+    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-  }
+  },
+  keys = {
+    {
+      "<leader>e",
+      "<cmd>Neotree toggle<cr>",
+      desc = "Explorer NeoTree (cwd)",
+    },
+  },
 }
+
+function M.config()
+  require("neo-tree").setup(
+    {
+      event_handlers = {
+        {
+          event = "vim_buffer_enter",
+          handler = function()
+            if vim.bo.filetype == "neo-tree" then
+              vim.cmd([[setlocal number relativenumber cursorlineopt=both]])
+            end
+          end,
+        },
+      },
+    }
+  )
+end
 
 return M
