@@ -125,6 +125,9 @@ alias vi="nvim"
 alias lvim="NVIM_APPNAME=lazyvim nvim"
 alias lg="lazygit"
 
+# alias to open tmux session with current directory name
+alias tms='tmux new-session -s "$(basename "$PWD")"'
+
 # I-beam and block for vi insert mode and normal mode
 zle-keymap-select () {
 if [ $KEYMAP = vicmd ]; then
