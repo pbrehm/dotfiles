@@ -5,5 +5,6 @@ require "user.config.autocmds"
 spec "user.colorschemes.kanagawa"
 -- spec "user.colorschemes.darkplus"
 
+spec "user.neotree"
 
 require "user.config.lazy"
