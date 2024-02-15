@@ -7,5 +7,10 @@ spec "user.colorschemes.kanagawa"
 
 spec "user.neotree"
 spec "user.whichkey"
+spec "user.treesitter"
+
+-- TODO:setup following plugins in this order
+-- Mason
+-- LSP
 
 require "user.config.lazy"
