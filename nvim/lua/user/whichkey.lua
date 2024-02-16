@@ -28,6 +28,9 @@ function M.config()
 
   local which_key = require "which-key"
   which_key.setup {
+    icons = {
+      separator = "", -- altarnative because regular italic ones looks super fat
+    },
     -- plugins = {
     --   marks = true,
     --   registers = true,
