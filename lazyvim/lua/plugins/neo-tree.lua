@@ -3,6 +3,13 @@ local Util = require("lazyvim.util")
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
+    window = {
+      mappings = {
+        ["z"] = "none",
+        ["C"] = "close_all_nodes",
+        ["c"] = "close_node"
+      }
+    },
     event_handlers = {
       {
         event = "vim_buffer_enter",
@@ -29,7 +36,7 @@ return {
       end,
       desc = "Explorer NeoTree (cwd)",
     },
-    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
-    { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (root dir)",      remap = true },
+    { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (cwd)",      remap = true },
+    { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (root dir)", remap = true },
   }
 }
