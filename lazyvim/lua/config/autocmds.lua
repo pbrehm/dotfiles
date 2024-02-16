@@ -14,3 +14,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end,
 })
+
+
+-- disable autocmd
+local function augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
+
+-- Create an autocmd that matches the same event but uses the do-nothing function
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = augroup("disable_resize_splits"),
+  callback = function() end,
+})
