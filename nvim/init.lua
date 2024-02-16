@@ -14,5 +14,8 @@ spec "user.lspconfig"
 spec "user.conform"
 spec "user.cmp"
 
+spec "user.indentline"
+spec "user.mini-indentscope"
+
 
 require "user.config.lazy"
