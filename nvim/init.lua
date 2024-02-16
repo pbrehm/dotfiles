@@ -9,8 +9,8 @@ spec "user.neotree"
 spec "user.whichkey"
 spec "user.treesitter"
 
--- TODO:setup following plugins in this order
--- Mason
--- LSP
+spec "user.mason"
+spec "user.lspconfig"
+
 
 require "user.config.lazy"
