@@ -46,10 +46,11 @@ function M.config()
   local wk = require "which-key"
   wk.register {
     ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    ["<leader>cf"] = {
-      "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
-      "Format",
-    },
+    -- formatter keybind added to conform
+    -- ["<leader>cf"] = {
+    --   "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+    --   "Format",
+    -- },
     ["<leader>ci"] = { "<cmd>LspInfo<cr>", "Info" },
     -- ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     ["<leader>uh"] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
@@ -57,8 +58,8 @@ function M.config()
     ["<leader>cA"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     -- ["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
     ["<leader>cr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    ["<leader>co"] = { "<cmd>VtsExec organize_imports<cr>", "Organize Imports" },
-    ["<leader>cR"] = { "<cmd>VtsExec remove_unused_imports<cr>", "Remove Unused Imports" },
+    ["<leader>co"] = { "<cmd>VtsExec organize_imports<cr>", "Organize Imports (vtsls)" },
+    ["<leader>cR"] = { "<cmd>VtsExec remove_unused_imports<cr>", "Remove Unused Imports (vtsls)" },
   }
 
   wk.register {
