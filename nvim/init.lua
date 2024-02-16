@@ -12,6 +12,7 @@ spec "user.treesitter"
 spec "user.mason"
 spec "user.lspconfig"
 spec "user.conform"
+spec "user.cmp"
 
 
 require "user.config.lazy"
