@@ -19,6 +19,13 @@ local M =
 function M.config()
   require("neo-tree").setup(
     {
+      window = {
+        mappings = {
+          ["z"] = "none",
+          ["C"] = "close_all_nodes",
+          ["c"] = "close_node"
+        }
+      },
       event_handlers = {
         {
           event = "vim_buffer_enter",
