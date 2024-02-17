@@ -17,5 +17,7 @@ spec "user.cmp"
 spec "user.indentline"
 spec "user.mini-indentscope"
 
+spec "user.lualine"
+
 
 require "user.config.lazy"
