@@ -82,7 +82,7 @@ function M.config()
       builtin = {
         -- These are passed to nvim_open_win
         -- anchor = "NW",
-        border = "rounded",
+        -- border = "rounded",
         -- 'editor' and 'win' will default to being centered
         relative = "editor",
 

@@ -114,15 +114,15 @@ function M.config()
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
-    window = {
-      completion = {
-        border = "rounded",
-        scrollbar = false,
-      },
-      documentation = {
-        border = "rounded",
-      },
-    },
+    -- window = {
+    --   completion = {
+    --     border = "rounded",
+    --     scrollbar = false,
+    --   },
+    --   documentation = {
+    --     border = "rounded",
+    --   },
+    -- },
     experimental = {
       ghost_text = false,
     },
