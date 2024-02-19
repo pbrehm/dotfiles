@@ -20,6 +20,7 @@ spec "user.mini-indentscope"
 spec "user.lualine"
 spec "user.gitsigns"
 spec "user.ufo"
+spec "user.comment"
 
 
 require "user.config.lazy"
