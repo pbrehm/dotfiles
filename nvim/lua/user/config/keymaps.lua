@@ -175,8 +175,8 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
 -- map("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
 -- map("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap = true })
-map("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
-map("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
+map("n", '<leader>"', "<C-W>s", { desc = "Split window below", remap = true })
+map("n", "<leader>%", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
