@@ -8,6 +8,7 @@ spec "user.colorschemes.kanagawa"
 spec "user.neotree"
 spec "user.whichkey"
 spec "user.treesitter"
+spec "user.treesitter-context"
 
 spec "user.mason"
 spec "user.lspconfig"
