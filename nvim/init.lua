@@ -21,6 +21,7 @@ spec "user.lualine"
 spec "user.gitsigns"
 spec "user.ufo"
 spec "user.comment"
+spec "user.telescope"
 
 
 require "user.config.lazy"

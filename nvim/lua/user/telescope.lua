@@ -6,18 +6,20 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.register {
-    ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    -- ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+    -- ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    -- ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+    ["<leader><leader>"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+    -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    ["<leader>/"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
     ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
   }
 
-  local icons = require "user.icons"
+  local icons = require "user.resources.icons"
   local actions = require "telescope.actions"
 
 
@@ -42,49 +44,49 @@ function M.config()
         "--glob=!.git/",
       },
 
-      mappings = {
-        i = {
-          ["<C-n>"] = actions.cycle_history_next,
-          ["<C-p>"] = actions.cycle_history_prev,
-
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-        },
-        n = {
-          ["<esc>"] = actions.close,
-          ["j"] = actions.move_selection_next,
-          ["k"] = actions.move_selection_previous,
-          ["q"] = actions.close,
-        },
-      },
+      -- mappings = {
+      --   i = {
+      --     ["<C-n>"] = actions.cycle_history_next,
+      --     ["<C-p>"] = actions.cycle_history_prev,
+      --
+      --     ["<C-j>"] = actions.move_selection_next,
+      --     ["<C-k>"] = actions.move_selection_previous,
+      --   },
+      --   n = {
+      --     ["<esc>"] = actions.close,
+      --     ["j"] = actions.move_selection_next,
+      --     ["k"] = actions.move_selection_previous,
+      --     ["q"] = actions.close,
+      --   },
+      -- },
     },
     pickers = {
-      live_grep = {
-        theme = "dropdown",
-      },
+      -- live_grep = {
+      --   theme = "dropdown",
+      -- },
 
-      grep_string = {
-        theme = "dropdown",
-      },
+      -- grep_string = {
+      --   theme = "dropdown",
+      -- },
 
-      find_files = {
-        theme = "dropdown",
-        previewer = false,
-      },
+      -- find_files = {
+      --   theme = "ropdown",
+      --   previewer = false,
+      -- },
 
-      buffers = {
-        theme = "dropdown",
-        previewer = false,
-        initial_mode = "normal",
-        mappings = {
-          i = {
-            ["<C-d>"] = actions.delete_buffer,
-          },
-          n = {
-            ["dd"] = actions.delete_buffer,
-          },
-        },
-      },
+      -- buffers = {
+      --   theme = "dropdown",
+      --   previewer = false,
+      --   initial_mode = "normal",
+      --   mappings = {
+      --     i = {
+      --       ["<C-d>"] = actions.delete_buffer,
+      --     },
+      --     n = {
+      --       ["dd"] = actions.delete_buffer,
+      --     },
+      --   },
+      -- },
 
       planets = {
         show_pluto = true,
@@ -96,22 +98,22 @@ function M.config()
       },
 
       lsp_references = {
-        theme = "dropdown",
+        -- theme = "dropdown",
         initial_mode = "normal",
       },
 
       lsp_definitions = {
-        theme = "dropdown",
+        -- theme = "dropdown",
         initial_mode = "normal",
       },
 
       lsp_declarations = {
-        theme = "dropdown",
+        -- theme = "dropdown",
         initial_mode = "normal",
       },
 
       lsp_implementations = {
-        theme = "dropdown",
+        -- theme = "dropdown",
         initial_mode = "normal",
       },
     },
