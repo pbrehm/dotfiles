@@ -6,23 +6,19 @@ local M = {
 M.config = function()
   local icons = require "user.resources.icons"
 
+  local gs = require "gitsigns"
   local wk = require "which-key"
   wk.register {
-    ["<leader>gj"] = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
-    ["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
-    ["<leader>gp"] = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    ["<leader>gr"] = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    ["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    ["<leader>gR"] = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    ["<leader>gs"] = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    ["<leader>gu"] = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    ["<leader>gd"] = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Git Diff",
-    },
+    ["]h"] = { function() gs.next_hunk { navigation_message = false } end, "Next Hunk", },
+    ["[h"] = { function() gs.prev_hunk { navigation_message = false } end, "Prev Hunk", },
+    ["<leader>gp"] = { function() gs.preview_hunk_inline() end, "Preview Hunk Inline", },
+    ["<leader>gb"] = { function() gs.blame_line { full = true } end, "Blame", },
+    ["<leader>gS"] = { function() gs.stage_buffer() end, "Reset Buffer", },
+    ["<leader>gR"] = { function() gs.reset_buffer() end, "Reset Buffer", },
+    ["<leader>gs"] = { function() gs.stage_hunk() end, "Stage Hunk", },
+    ["<leader>gr"] = { function() gs.reset_hunk() end, "Reset Hunk", },
+    ["<leader>gu"] = { function() gs.undo_stage_hunk() end, "Undo Stage Hunk", },
+    ["<leader>gd"] = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff", },
   }
 
   require("gitsigns").setup {
@@ -67,7 +63,7 @@ M.config = function()
     update_debounce = 200,
     max_file_length = 40000,
     preview_config = {
-      -- border = "rounded",
+      border = "single",
       style = "minimal",
       relative = "cursor",
       row = 0,
