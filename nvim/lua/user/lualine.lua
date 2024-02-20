@@ -18,17 +18,39 @@ function M.config()
         {
           "diagnostics",
           symbols = {
-            error = icons.diagnostics.Error,
-            warn = icons.diagnostics.Warn,
-            info = icons.diagnostics.Info,
-            hint = icons.diagnostics.Hint,
+            error = icons.diagnostics.BoldError,
+            warn = icons.diagnostics.BoldWarning,
+            info = icons.diagnostics.BoldInformation,
+            hint = icons.diagnostics.BoldHint,
           },
         },
         { 'filename' }
       },
+      lualine_x = {
+        { 'file' },
+        {
+          "diff",
+          symbols = {
+            added = icons.git.LineAdded,
+            modified = icons.git.LineModified,
+            removed = icons.git.LineRemoved,
+          },
+          source = function()
+            local gitsigns = vim.b.gitsigns_status_dict
+            if gitsigns then
+              return {
+                added = gitsigns.added,
+                modified = gitsigns.changed,
+                removed = gitsigns.removed,
+              }
+            end
+          end,
+        } }
     },
     -- extensions = { "quickfix", "man", "fugitive" },
   }
+
+  -- TODO: lazyvim lualine has git signs in it
 end
 
 return M
