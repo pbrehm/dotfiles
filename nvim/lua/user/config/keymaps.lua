@@ -18,7 +18,7 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
--- Move Lines -- 
+-- Move Lines --
 -- when when pressing escape to exit insert mode sometimes its easy to pres esc+j which is the same as alt+J
 -- this results in moving the line. I just unbind these in insert and visual mode
 -- since I only need to move lines in normal mode
@@ -97,7 +97,7 @@ local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
   return function()
-    go({ severity = severity })
+    go { severity = severity }
   end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
@@ -186,7 +186,8 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-
+local terminal = require("user.util.lazyterm.terminal")
+map("n", "<leader>gg", function() terminal.open({ "lazygit" }, {esc_esc = false, ctrl_hjkl = false}) end, { desc = "Lazygit" })
 -- personal keybinds
 --
 -- send pasted over text to void buffer so that I don't lose what I'm pasting
