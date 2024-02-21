@@ -101,7 +101,7 @@ function M.config()
   vim.diagnostic.config(default_diagnostic_config)
 
   for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, --[[ numhl = sign.name ]] })
   end
 
   -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
