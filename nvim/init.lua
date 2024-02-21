@@ -28,5 +28,7 @@ spec "user.comment"
 spec "user.telescope"
 spec "user.test"
 
+spec "user.dap"
+
 
 require "user.config.lazy"

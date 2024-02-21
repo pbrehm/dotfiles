@@ -1,23 +1,9 @@
-local M =
-{
+local M = {
   "stevearc/conform.nvim",
-  dependencies = {
-    { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-  },
 }
 
 function M.config()
-  -- mason-tool-installer to install formatters
-  require("mason-tool-installer").setup {
-    ensure_installed = {
-      "prettierd",
-      "eslint_d",
-      "sql-formatter",
-      "stylua"
-    },
-
-  }
-  require("conform").setup({
+  require("conform").setup {
     formatters_by_ft = {
       ["javascript"] = { "prettierd", "eslint_d" },
       ["javascriptreact"] = { "prettierd", "eslint_d" },
@@ -38,7 +24,7 @@ function M.config()
       ["sql"] = { "sql_formatter" },
       ["lua"] = { "stylua" },
     },
-  })
+  }
   local wk = require "which-key"
   wk.register {
     ["<leader>cf"] = {

@@ -2,9 +2,9 @@ local M = {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {
     "williamboman/mason.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
 }
-
 
 function M.config()
   local servers = {
@@ -13,7 +13,20 @@ function M.config()
     -- "tsserver",
     "bashls",
     "jsonls",
-    "eslint"
+    "eslint",
+  }
+
+  require("mason-tool-installer").setup {
+    ensure_installed = {
+      -- formatters required for conform
+      "prettierd",
+      "eslint_d",
+      "sql-formatter",
+      "stylua",
+
+      -- debugger required for dap with typescript
+      "js-debug-adapter",
+    },
   }
 
   require("mason").setup {
