@@ -19,12 +19,14 @@ spec "user.indentline"
 spec "user.mini-indentscope"
 spec "user.illuminate"
 spec "user.autopairs"
+spec "user.trouble"
 
 spec "user.lualine"
 spec "user.gitsigns"
 spec "user.ufo"
 spec "user.comment"
 spec "user.telescope"
+spec "user.test"
 
 
 require "user.config.lazy"
