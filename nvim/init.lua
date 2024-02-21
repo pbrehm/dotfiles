@@ -20,6 +20,7 @@ spec "user.mini-indentscope"
 spec "user.illuminate"
 spec "user.autopairs"
 spec "user.trouble"
+spec "user.matchup"
 
 spec "user.lualine"
 spec "user.gitsigns"
