@@ -22,6 +22,7 @@ spec "user.autopairs"
 spec "user.trouble"
 spec "user.matchup"
 spec "user.spectre"
+spec "user.todo-comments"
 
 spec "user.lualine"
 spec "user.gitsigns"
