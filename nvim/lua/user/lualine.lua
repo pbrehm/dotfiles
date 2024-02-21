@@ -24,10 +24,10 @@ function M.config()
             hint = icons.diagnostics.BoldHint,
           },
         },
-        { 'filename' }
+        { 'filename', path = 1 }
       },
       lualine_x = {
-        { 'file' },
+        { "file" },
         {
           "diff",
           symbols = {
@@ -45,7 +45,8 @@ function M.config()
               }
             end
           end,
-        } }
+        },
+      },
     },
     -- extensions = { "quickfix", "man", "fugitive" },
   }
