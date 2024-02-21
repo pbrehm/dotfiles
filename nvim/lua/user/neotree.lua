@@ -13,6 +13,7 @@ local M = {
       desc = "Explorer NeoTree (cwd)",
     },
   },
+
 }
 
 function M.config()
@@ -24,6 +25,9 @@ function M.config()
         ["c"] = "close_node",
         ["<space>"] = "none",
       },
+    },
+    filesystem = {
+      follow_current_file = { enabled = true },
     },
     event_handlers = {
       {
