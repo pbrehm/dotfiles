@@ -17,6 +17,8 @@ spec "user.cmp"
 
 spec "user.indentline"
 spec "user.mini-indentscope"
+spec "user.illuminate"
+spec "user.autopairs"
 
 spec "user.lualine"
 spec "user.gitsigns"
