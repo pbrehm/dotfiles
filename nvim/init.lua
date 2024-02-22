@@ -24,6 +24,10 @@ spec "user.matchup"
 spec "user.spectre"
 spec "user.todo-comments"
 
+-- fancy ui
+-- spec "user.dressing"
+-- spec "user.noice"
+
 spec "user.lualine"
 spec "user.gitsigns"
 spec "user.ufo"
