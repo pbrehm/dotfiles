@@ -20,7 +20,7 @@ function M.config()
       "oil",
       "minifiles",
       "fugitive",
-      "alpha",
+      "dashboard",
       "NvimTree",
       "lazy",
       "NeogitStatus",

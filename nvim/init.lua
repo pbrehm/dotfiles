@@ -31,6 +31,8 @@ spec "user.comment"
 spec "user.telescope"
 spec "user.test"
 
+spec "user.persistence"
+spec "user.dashboard-nvim"
 spec "user.dap"
 
 
