@@ -28,6 +28,8 @@ spec "user.todo-comments"
 -- spec "user.dressing"
 -- spec "user.noice"
 
+-- spec "user.fidget"
+
 spec "user.lualine"
 spec "user.gitsigns"
 spec "user.ufo"
