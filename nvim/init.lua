@@ -23,6 +23,7 @@ spec "user.trouble"
 spec "user.matchup"
 spec "user.spectre"
 spec "user.todo-comments"
+spec "user.mini-surround"
 
 -- fancy ui
 -- spec "user.dressing"
