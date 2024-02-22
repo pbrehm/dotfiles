@@ -24,10 +24,10 @@ function M.config()
             hint = icons.diagnostics.BoldHint,
           },
         },
-        { 'filename', path = 1 }
+        { 'filename', file_status = true, path = 1 }
       },
       lualine_x = {
-        { "file" },
+        { "filetype" },
         {
           "diff",
           symbols = {
@@ -51,7 +51,6 @@ function M.config()
     -- extensions = { "quickfix", "man", "fugitive" },
   }
 
-  -- TODO: lazyvim lualine has git signs in it
 end
 
 return M
