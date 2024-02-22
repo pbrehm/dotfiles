@@ -200,3 +200,6 @@ vim.api.nvim_set_keymap("x", "p", [["_dP]], { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "#", "#zz", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "g*", "g*zz", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "g#", "g#zz", { noremap = true, silent = true })
+
+
+map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap" })
