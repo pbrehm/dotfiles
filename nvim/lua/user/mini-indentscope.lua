@@ -30,6 +30,9 @@ function M.init()
       "notify",
       "toggleterm",
       "lazyterm",
+      "neotest-summary",
+      "neotest-output",
+      "neotest-output-panel"
     },
     callback = function()
       vim.b.miniindentscope_disable = true
