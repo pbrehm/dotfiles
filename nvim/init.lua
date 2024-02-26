@@ -45,5 +45,7 @@ spec "user.undo-tree"
 
 spec "user.dap"
 
+-- spec "user.nvim-window"
+
 
 require "user.config.lazy"
