@@ -32,6 +32,7 @@ function M.config()
         require("conform").format()
       end,
       "Format",
+      mode = { "v", "n" },
     },
   }
 end
