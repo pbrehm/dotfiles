@@ -41,7 +41,7 @@ function M.config()
   require("lspconfig.configs").vtsls = require("vtsls").lspconfig
   local wk = require "which-key"
   wk.register {
-    ["<leader>ca"] = { function() vim.lsp.buf.code_action() end, "Code Action" },
+    ["<leader>ca"] = { function() vim.lsp.buf.code_action() end, "Code Action", mode = {"n", "v"} },
     -- formatter keybind added to conform
     -- ["<leader>cf"] = {
     --   "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
@@ -56,9 +56,6 @@ function M.config()
     ["<leader>cr"] = { function() vim.lsp.buf.rename() end, "Rename" },
     ["<leader>co"] = { "<cmd>VtsExec organize_imports<cr>", "Organize Imports (vtsls)" },
     ["<leader>cR"] = { "<cmd>VtsExec remove_unused_imports<cr>", "Remove Unused Imports (vtsls)" },
-  }
-
-  wk.register { ["<leader>ca"] = { function() vim.lsp.buf.code_action() end, "Code Action", mode = "v", },
   }
 
   local lspconfig = require "lspconfig"
