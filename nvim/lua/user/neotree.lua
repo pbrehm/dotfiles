@@ -9,8 +9,13 @@ local M = {
   keys = {
     {
       "<leader>e",
-      "<cmd>Neotree toggle<cr>",
-      desc = "Explorer NeoTree (cwd)",
+      "<cmd>Neotree reveal<cr>",
+      desc = "Explorer NeoTree reveal",
+    },
+    {
+      "<leader>E",
+      "<cmd>Neotree close<cr>",
+      desc = "Explorer NeoTree close",
     },
   },
 
