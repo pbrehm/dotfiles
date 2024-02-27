@@ -44,6 +44,7 @@ spec "user.harpoon"
 spec "user.undo-tree"
 spec "user.gitdiff"
 spec "user.colorizer"
+spec "user.navbuddy" -- makes cursor black. on nightly. Probably an nui thing
 
 spec "user.dap"
 
