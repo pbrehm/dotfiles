@@ -42,6 +42,7 @@ spec "user.persistence"
 spec "user.dashboard-nvim"
 spec "user.harpoon"
 spec "user.undo-tree"
+spec "user.gitdiff"
 
 spec "user.dap"
 

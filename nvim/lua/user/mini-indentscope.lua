@@ -32,7 +32,8 @@ function M.init()
       "lazyterm",
       "neotest-summary",
       "neotest-output",
-      "neotest-output-panel"
+      "neotest-output-panel",
+      "DiffviewFiles"
     },
     callback = function()
       vim.b.miniindentscope_disable = true

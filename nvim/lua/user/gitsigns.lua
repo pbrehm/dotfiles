@@ -18,7 +18,7 @@ M.config = function()
     ["<leader>gs"] = { function() gs.stage_hunk() end, "Stage Hunk", },
     ["<leader>gr"] = { function() gs.reset_hunk() end, "Reset Hunk", },
     ["<leader>gu"] = { function() gs.undo_stage_hunk() end, "Undo Stage Hunk", },
-    ["<leader>gd"] = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff", },
+    -- ["<leader>gd"] = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff", },
   }
 
   require("gitsigns").setup {
