@@ -30,6 +30,7 @@ spec "user.mini-surround"
 -- spec "user.noice"
 
 -- spec "user.fidget"
+-- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
 
 spec "user.lualine"
 spec "user.gitsigns"
