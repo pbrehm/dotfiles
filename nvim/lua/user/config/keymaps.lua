@@ -12,11 +12,11 @@ map("n", "<M-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<M-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<M-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- Resize window using <alt><shift> hjkl
+map("n", "<M-K>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<M-J>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<M-H>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<M-L>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Move Lines --
 -- when when pressing escape to exit insert mode sometimes its easy to pres esc+j which is the same as alt+J
