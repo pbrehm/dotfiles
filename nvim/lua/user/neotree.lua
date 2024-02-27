@@ -17,6 +17,11 @@ local M = {
       "<cmd>Neotree close<cr>",
       desc = "Explorer NeoTree close",
     },
+    {
+      "<leader>ge",
+      "<cmd>Neotree git_status<cr>",
+      desc = "Explorer NeoTree Git Status",
+    },
   },
 
 }

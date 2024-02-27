@@ -24,7 +24,6 @@ M.keys = {
   { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "DiffviewFileHistory (branch)" },
   { "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffviewFileHistory (file)" },
   { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffviewOpen" },
-  { "<leader>ge", "<cmd>DiffviewToggleFiles<cr>", desc = "DiffToggleFiles (explore)" },
   {
     "<leader>gc",
     function()
