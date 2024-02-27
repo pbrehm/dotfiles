@@ -43,6 +43,7 @@ spec "user.dashboard-nvim"
 spec "user.harpoon"
 spec "user.undo-tree"
 spec "user.gitdiff"
+spec "user.colorizer"
 
 spec "user.dap"
 
