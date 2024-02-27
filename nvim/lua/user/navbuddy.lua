@@ -14,18 +14,32 @@ function M.config()
 
   local navbuddy = require "nvim-navbuddy"
   -- local actions = require("nvim-navbuddy.actions")
+
+  -- remove NavbuddyName highlight group because its broken with this theme
+  vim.api.nvim_set_hl(0, "NavbuddyName", {})
+
   navbuddy.setup {
     window = {
       -- position = { row = "50%", col = "0%" },
-      -- size = "90%",
-      -- sections = {
-        -- right = {
-        --   preview = "always",
-        -- },
-      -- },
+      size = "80%",
+      sections = {
+        left = {
+          size = "20%"
+        },
+        mid = {
+          size = "30%"
+        },
+        right = {
+          preview = "always",
+        },
+      },
     },
     icons = require("user.resources.icons").kind,
     lsp = { auto_attach = true },
+    source_buffer = {
+      highlight = true,
+      follow_node = false,
+    },
   }
 
   -- local opts = { noremap = true, silent = true }
