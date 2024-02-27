@@ -2,54 +2,55 @@ require "user.config.launch"
 require "user.config.options"
 require "user.config.keymaps"
 require "user.config.autocmds"
-spec "user.colorschemes.kanagawa"
--- spec "user.colorschemes.darkplus"
 
-spec "user.neotree"
-spec "user.whichkey"
+-- treesitter
 spec "user.treesitter"
 spec "user.treesitter-context"
 
+-- lsp
 spec "user.mason"
 spec "user.lspconfig"
 spec "user.conform"
 spec "user.cmp"
 
+-- ui
+spec "user.colorschemes.kanagawa"
+-- spec "user.colorschemes.darkplus"
+spec "user.neotree"
 spec "user.indentline"
 spec "user.mini-indentscope"
 spec "user.illuminate"
--- spec "user.autopairs"
+spec "user.whichkey"
+spec "user.todo-comments"
+spec "user.lualine"
+spec "user.colorizer"
+
+-- editor
+spec "user.telescope"
 spec "user.trouble"
 spec "user.matchup"
 spec "user.spectre"
-spec "user.todo-comments"
 spec "user.mini-surround"
-
--- fancy ui
--- spec "user.dressing"
--- spec "user.noice"
-
--- spec "user.fidget"
--- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
-
-spec "user.lualine"
-spec "user.gitsigns"
 spec "user.ufo"
 spec "user.comment"
-spec "user.telescope"
-spec "user.test"
-
+-- spec "user.autopairs"
+spec "user.harpoon"
+spec "user.navbuddy" -- makes cursor black. on nightly. Probably an nui thing
 spec "user.persistence"
 spec "user.dashboard-nvim"
-spec "user.harpoon"
 spec "user.undo-tree"
-spec "user.gitdiff"
-spec "user.colorizer"
-spec "user.navbuddy" -- makes cursor black. on nightly. Probably an nui thing
-
-spec "user.dap"
-
+-- spec "user.fidget"
+-- spec "user.dressing"
+-- spec "user.noice"
+-- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
 -- spec "user.nvim-window"
 
+-- git
+spec "user.gitsigns"
+spec "user.gitdiff"
+
+-- test
+spec "user.test"
+spec "user.dap"
 
 require "user.config.lazy"
