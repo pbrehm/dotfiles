@@ -118,7 +118,9 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 -- map("n", "<leader>uL", function() Util.toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
 -- map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
--- map("n", "<leader>ud", function() Util.toggle.diagnostics() end, { desc = "Toggle Diagnostics" })
+local toggle = require("user.util.toggle")
+map("n", "<leader>ud", function() toggle.diagnostics_buffer() end, { desc = "Toggle Diagnostics for current buffer" })
+map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
 
 
 
