@@ -116,6 +116,7 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- map("n", "<leader>uF", function() Util.format.toggle(true) end, { desc = "Toggle auto format (buffer)" })
 -- map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
 -- map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
+map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" })
 -- map("n", "<leader>uL", function() Util.toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
 -- map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
 local toggle = require("user.util.toggle")
@@ -204,4 +205,3 @@ vim.api.nvim_set_keymap("x", "p", [["_dP]], { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "g#", "g#zz", { noremap = true, silent = true })
 
 
-map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap" })
