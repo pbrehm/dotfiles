@@ -14,6 +14,7 @@ function M.config()
     "bashls",
     "jsonls",
     "eslint",
+    "yamlls"
   }
 
   require("mason-tool-installer").setup {

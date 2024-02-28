@@ -20,9 +20,15 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-
+  local cmd = client.config.cmd[1]
+  -- vim.notify("cmd".. cmd)
   if client.supports_method "textDocument/inlayHint" then
-    vim.lsp.inlay_hint.enable(bufnr, true)
+    -- yamlls doesn't seem to actually support inlay hints.
+    if not string.find(cmd, "yaml%-language%-server") then
+      -- vim.notify("supports inlay hints but not yamlls")
+      vim.lsp.inlay_hint.enable(bufnr, true)
+      -- add toggle inlay hints only when supported
+    end
   end
 end
 
@@ -68,6 +74,7 @@ function M.config()
     "bashls",
     "jsonls",
     "eslint",
+    "yamlls"
   }
 
   local default_diagnostic_config = {
