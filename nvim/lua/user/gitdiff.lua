@@ -4,7 +4,10 @@ local actions = require "telescope.actions"
 local diffview_open_commit = function(prompt_bufnr)
   local selected_entry = actions_state.get_selected_entry()
   actions.close(prompt_bufnr)
-  vim.api.nvim_command("DiffviewOpen " .. selected_entry.value)
+  -- example: DiffviewOpen currentHash^1..currentHash
+  -- difference between the previous commit and this commit. effectively shows the change in the chosen commit
+  local cmd = "DiffviewOpen " .. selected_entry.value .. "^1" .. ".." .. selected_entry.value
+  vim.api.nvim_command(cmd)
 end
 
 local opts = {
