@@ -11,7 +11,7 @@ function M.get_signs(buf, lnum)
   ---@type Sign[]
   local signs = {}
 
-  if vim.fn.has("nvim-0.10") == 0 then
+  if vim.fn.has "nvim-0.10" == 0 then
     -- Only needed for Neovim <0.10
     -- Newer versions include legacy signs in nvim_buf_get_extmarks
     for _, sign in ipairs(vim.fn.sign_getplaced(buf, { group = "*", lnum = lnum })[1].signs) do
@@ -48,7 +48,6 @@ function M.get_signs(buf, lnum)
   return signs
 end
 
-
 ---@return Sign?
 ---@param buf number
 ---@param lnum number
@@ -56,12 +55,11 @@ function M.get_mark(buf, lnum)
   local marks = vim.fn.getmarklist(buf)
   vim.list_extend(marks, vim.fn.getmarklist())
   for _, mark in ipairs(marks) do
-    if mark.pos[1] == buf and mark.pos[2] == lnum and mark.mark:match("[a-zA-Z]") then
+    if mark.pos[1] == buf and mark.pos[2] == lnum and mark.mark:match "[a-zA-Z]" then
       return { text = mark.mark:sub(2), texthl = "DiagnosticHint" }
     end
   end
 end
-
 
 ---@param sign? Sign
 ---@param len? number
@@ -93,6 +91,7 @@ function M.statuscolumn()
     end
     if vim.v.virtnum ~= 0 then
       left = nil
+      right = nil -- PB: do not show gitsigns on wrapped line since it aligns poorly
     end
     vim.api.nvim_win_call(win, function()
       if vim.fn.foldclosed(vim.v.lnum) >= 0 then
@@ -100,7 +99,8 @@ function M.statuscolumn()
       end
     end)
     -- Left: mark or non-git sign
-    components[1] = M.icon(M.get_mark(buf, vim.v.lnum) or left)
+    -- components[1] = M.icon(M.get_mark(buf, vim.v.lnum) or left) -- PB: original
+    components[1] = M.icon(left) -- PB: do not display marks in status cloumn
     -- Right: fold icon or git sign (only if file)
     components[3] = is_file and M.icon(fold or right) or ""
   end
