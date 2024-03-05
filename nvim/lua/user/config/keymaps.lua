@@ -120,7 +120,7 @@ map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" 
 -- map("n", "<leader>uL", function() Util.toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
 -- map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
 local toggle = require("user.util.toggle")
-map("n", "<leader>ud", function() toggle.diagnostics_buffer() end, { desc = "Toggle Diagnostics for current buffer" })
+map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
 
 

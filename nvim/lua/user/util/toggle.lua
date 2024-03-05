@@ -1,13 +1,17 @@
 local M = {}
 
-function M.diagnostics_buffer()
+function M.diagnostics_buffer(notify)
   local bufnr = vim.api.nvim_get_current_buf()
   if vim.diagnostic.is_disabled(bufnr) then
     vim.diagnostic.enable(bufnr)
-    vim.notify "Enabled diagnostics for buffer"
+    if notify then
+      vim.notify "Enabled diagnostics for buffer"
+    end
   else
     vim.diagnostic.disable(bufnr)
-    vim.notify "Disabled diagnostics for buffer"
+    if notify then
+      vim.notify "Disabled diagnostics for buffer"
+    end
   end
 end
 

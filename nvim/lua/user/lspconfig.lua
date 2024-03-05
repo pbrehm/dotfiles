@@ -24,6 +24,10 @@ M.on_attach = function(client, bufnr)
   -- vim.notify("cmd".. cmd)
   if client.supports_method "textDocument/inlayHint" then
     -- yamlls doesn't seem to actually support inlay hints.
+    if string.find(cmd, "yaml%-language%-server") then
+      local toggle = require "user.util.toggle"
+      toggle.diagnostics_buffer(false)
+    end
     if not string.find(cmd, "yaml%-language%-server") then
       -- vim.notify("supports inlay hints but not yamlls")
       vim.lsp.inlay_hint.enable(bufnr, true)
@@ -74,7 +78,7 @@ function M.config()
     "bashls",
     "jsonls",
     "eslint",
-    "yamlls"
+    "yamlls",
   }
 
   local default_diagnostic_config = {
