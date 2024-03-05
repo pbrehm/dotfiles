@@ -3,6 +3,13 @@ local M = {
   cmd = { "TodoTrouble", "TodoTelescope" },
   config = true,
   event = "BufEnter",
+  opts = {
+    keywords = {
+      PB = {
+        color = "info",
+      },
+    },
+  },
     -- stylua: ignore
     keys = {
       { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
