@@ -122,7 +122,18 @@ map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" 
 local toggle = require("user.util.toggle")
 map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
+map("n", "<leader>ut", [[&showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"]], { desc = " Toggle tabline", expr = true, silent = true })
 
+
+map  ( 'n', '<M-1>', ':1tabnext<CR>', { desc = "Go to tab #1", noremap = true, silent = true } )
+map  ( 'n', '<M-2>', ':2tabnext<CR>', { desc = "Go to tab #2", noremap = true, silent = true } )
+map  ( 'n', '<M-3>', ':3tabnext<CR>', { desc = "Go to tab #3", noremap = true, silent = true } )
+map  ( 'n', '<M-4>', ':4tabnext<CR>', { desc = "Go to tab #4", noremap = true, silent = true } )
+map  ( 'n', '<M-5>', ':5tabnext<CR>', { desc = "Go to tab #5", noremap = true, silent = true } )
+map  ( 'n', '<M-6>', ':6tabnext<CR>', { desc = "Go to tab #6", noremap = true, silent = true } )
+map  ( 'n', '<M-7>', ':7tabnext<CR>', { desc = "Go to tab #7", noremap = true, silent = true } )
+map  ( 'n', '<M-8>', ':8tabnext<CR>', { desc = "Go to tab #8", noremap = true, silent = true } )
+map  ( 'n', '<M-9>', ':9tabnext<CR>', { desc = "Go to tab #9", noremap = true, silent = true } )
 
 
 -- local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
@@ -203,5 +214,3 @@ vim.api.nvim_set_keymap("x", "p", [["_dP]], { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "#", "#zz", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "g*", "g*zz", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "g#", "g#zz", { noremap = true, silent = true })
-
-
