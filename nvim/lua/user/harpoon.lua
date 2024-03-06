@@ -1,83 +1,59 @@
 local M = {
   "ThePrimeagen/harpoon",
   event = "VeryLazy",
+  branch = "harpoon2",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
   },
 }
 
--- function M.config()
---   local keymap = vim.keymap.set
---   local opts = { noremap = true, silent = true }
---   --
---   -- keymap("n", "<s-m>", "<cmd>lua require('user.harpoon').mark_file()<cr>", opts)
---   -- keymap("n", "<TAB>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
--- end
+function M.config()
+  local harpoon = require "harpoon"
+  harpoon:setup {}
 
-M.keys = {
-  {
-    "<leader>hu",
-    function()
-      require("harpoon.ui").toggle_quick_menu()
-    end,
-    desc = "[H]arpoon [U]i",
-  },
-  {
-    "<leader>h1",
-    function()
-      require("harpoon.ui").nav_file(1)
-    end,
-    desc = "[H]arpoon nave file [1]",
-  },
-  {
-    "<leader>h2",
-    function()
-      require("harpoon.ui").nav_file(2)
-    end,
-    desc = "[H]arpoon nave file [2]",
-  },
-  {
-    "<leader>h3",
-    function()
-      require("harpoon.ui").nav_file(3)
-    end,
-    desc = "[H]arpoon nave file [3]",
-  },
-  {
-    "<leader>h4",
-    function()
-      require("harpoon.ui").nav_file(4)
-    end,
-    desc = "[H]arpoon nave file [4]",
-  },
-  {
-    "<leader>h5",
-    function()
-      require("harpoon.ui").nav_file(5)
-    end,
-    desc = "[H]arpoon nave file [5]",
-  },
-  {
-    "<leader>hm",
-    function()
-      require("harpoon.mark").add_file()
-    end,
-    desc = "[H]arpoon [M]ark file",
-  },
-  {
-    "<leader>hn",
-    function()
-      require("harpoon.ui").nav_next()
-    end,
-    desc = "[H]arpoon navigate [N]ext",
-  },
-  {
-    "<leader>hp",
-    function()
-      require("harpoon.ui").nav_prev()
-    end,
-    desc = "[H]arpoon navigate [P]rev",
-  },
-}
+  vim.keymap.set("n", "<s-m>", function()
+    harpoon:list():append()
+    vim.notify "󱡅  marked file"
+  end)
+  vim.keymap.set("n", "<leader>h", function()
+    harpoon.ui:toggle_quick_menu(harpoon:list())
+  end, { desc = "Harpoon toggle ui" })
+
+  vim.keymap.set("n", "<leader>1", function()
+    harpoon:list():select(1)
+  end, { desc = "Harpoon select 1" })
+  vim.keymap.set("n", "<leader>2", function()
+    harpoon:list():select(2)
+  end, { desc = "Harpoon select 2" })
+  vim.keymap.set("n", "<leader>3", function()
+    harpoon:list():select(3)
+  end, { desc = "Harpoon select 3" })
+  vim.keymap.set("n", "<leader>4", function()
+    harpoon:list():select(4)
+  end, { desc = "Harpoon select 4" })
+  vim.keymap.set("n", "<leader>5", function()
+    harpoon:list():select(5)
+  end, { desc = "Harpoon select 5" })
+  vim.keymap.set("n", "<leader>6", function()
+    harpoon:list():select(6)
+  end, { desc = "Harpoon select 6" })
+  vim.keymap.set("n", "<leader>7", function()
+    harpoon:list():select(7)
+  end, { desc = "Harpoon select 7" })
+  vim.keymap.set("n", "<leader>8", function()
+    harpoon:list():select(8)
+  end, { desc = "Harpoon select 8" })
+  vim.keymap.set("n", "<leader>9", function()
+    harpoon:list():select(9)
+  end, { desc = "Harpoon select 9" })
+
+  -- Toggle previous & next buffers stored within Harpoon list
+  -- vim.keymap.set("n", "<C-S-P>", function()
+  --   harpoon:list():prev()
+  -- end)
+  -- vim.keymap.set("n", "<C-S-N>", function()
+  --   harpoon:list():next()
+  -- end)
+end
 
 return M
