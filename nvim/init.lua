@@ -41,6 +41,7 @@ spec "user.dashboard-nvim"
 spec "user.undo-tree"
 spec "user.mini-ai"
 spec "user.fidget"
+spec "user.bqf"
 -- spec "user.dressing"
 -- spec "user.noice"
 -- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
