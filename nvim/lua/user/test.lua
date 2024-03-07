@@ -76,6 +76,33 @@ function M.config()
   }, neotest_ns)
 
   local opts = {
+    summary = {
+      -- animated = true,
+      -- enabled = true,
+      -- expand_errors = true,
+      -- follow = true,
+      mappings = {
+        -- attach = "a",
+        -- clear_marked = "M",
+        -- clear_target = "T",
+        -- debug = "d",
+        -- debug_marked = "D",
+        expand = "e",
+        expand_all = "E",
+        jumpto = { "<CR>", "<2-LeftMouse>" },
+        -- mark = "m",
+        -- next_failed = "J",
+        -- output = "o",
+        -- prev_failed = "K",
+        -- run = "r",
+        -- run_marked = "R",
+        -- short = "O",
+        -- stop = "u",
+        -- target = "t",
+        -- watch = "w"
+      },
+      -- open = "botright vsplit | vertical resize 50"
+    },
     -- Can be a list of adapters like what neotest expects,
     -- or a list of adapter names,
     -- or a table of adapter names, mapped to adapter configs.
