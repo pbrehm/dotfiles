@@ -38,6 +38,7 @@ spec "user.harpoon"
 spec "user.navbuddy" -- makes cursor black. on nightly. Probably an nui thing
 spec "user.persistence"
 spec "user.dashboard-nvim"
+spec "user.bufdel"
 spec "user.undo-tree"
 spec "user.mini-ai"
 spec "user.fidget"
