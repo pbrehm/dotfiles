@@ -122,7 +122,7 @@ map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" 
 local toggle = require("user.util.toggle")
 map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
-map("n", "<leader>ut", [[&showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"]], { desc = " Toggle tabline", expr = true, silent = true })
+map("n", "<leader>u<TAB>", [[&showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"]], { desc = " Toggle tabline", expr = true, silent = true })
 
 
 map  ( 'n', '<M-1>', ':1tabnext<CR>', { desc = "Go to tab #1", noremap = true, silent = true } )

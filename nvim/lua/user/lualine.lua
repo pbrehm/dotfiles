@@ -2,7 +2,19 @@ local M = {
   "nvim-lualine/lualine.nvim",
 }
 
+Truncate_path = false
+
+function M.toggle_truncate()
+  Truncate_path = not Truncate_path
+  if Truncate_path then
+    vim.notify "Harpoon tab bar path truncation enabled"
+  else
+    vim.notify "Harpoon tab bar path truncation disabled"
+  end
+end
+
 function M.config()
+  vim.keymap.set("n", "<leader>ut", M.toggle_truncate, { desc = "Toggle tabline harpoon path truncation" })
 
   vim.cmd "highlight HarpoonNumberActive guifg=#FF9E3B"
   vim.cmd "highlight HarpoonActive guifg=#FF9E3B"
@@ -18,13 +30,31 @@ function M.config()
       local harpoon_file_path = harpoon:list():get(index).value
       local file_name = harpoon_file_path == "" and "(empty)" or vim.fn.fnamemodify(harpoon_file_path, ":t")
 
+      if Truncate_path then
+        -- logic to add parth with single characters for file names
+        local parts = vim.split(harpoon_file_path, "[\\/]")
+        local truncated_parts = {}
+        -- if #parts > 3 then
+        for _, part in pairs(parts) do
+          if --[[ _ ~= 1 and ]] -- don't truncate root dir
+            _ ~= #parts
+            --[[ and _ ~= #parts -1  ]] -- don't truncate parent dir
+          then
+            part = string.sub(part, 1, 1)
+          end
+          table.insert(truncated_parts, part)
+        end
+        -- end
+        local sep = "/"
+        file_name = table.concat(truncated_parts, sep)
+      end
+
       if current_file_path == harpoon_file_path then
         contents[index] = string.format("%%#HarpoonNumberActive# %s. %%#HarpoonActive#%s ", index, file_name)
       else
         contents[index] = string.format("%%#HarpoonNumberInactive# %s. %%#HarpoonInactive#%s ", index, file_name)
       end
     end
-
     return table.concat(contents)
   end
 
@@ -36,7 +66,7 @@ function M.config()
           "tabs",
 
           -- tab_max_length = 500, -- Maximum width of each tab. The content will be shorten dynamically (example: apple/orange -> a/orange)
-          -- max_length = 1000,
+          max_length = 1000,
           mode = 2,
           -- path = 1,
           -- cond = function()
