@@ -44,7 +44,7 @@ function M.config()
   end
 
   local ftMap = {
-    typescript = { "lsp", "treesitter" },
+    typescript = { "lsp" },
     yaml = { "treesitter" },
     -- python = { "indent" },
     -- git = "",
