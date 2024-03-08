@@ -77,6 +77,9 @@ opt.fillchars = {
 
 -- if vim.fn.has("nvim-0.9.0") == 1 then
 vim.opt.statuscolumn = [[%!v:lua.require'user.util.ui'.statuscolumn()]]
+
+-- default hides on launch and unhids based on logic in lualine tabs
+vim.cmd":set showtabline=0"
 -- end
 
 -- HACK: causes freezes on <= 0.9, so only enable on >= 0.10 for now

@@ -124,7 +124,7 @@ map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" 
 local toggle = require("user.util.toggle")
 map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
-map("n", "<leader>u<TAB>", [[&showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"]], { desc = " Toggle tabline", expr = true, silent = true })
+-- map("n", "<leader>u<TAB>", [[&showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"]], { desc = " Toggle tabline", expr = true, silent = true })
 
 
 map  ( 'n', '<M-1>', ':1tabnext<CR>', { desc = "Go to tab #1", noremap = true, silent = true } )
@@ -197,7 +197,8 @@ map("n", "<leader>%", "<C-W>v", { desc = "Split window right", remap = true })
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
 map("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
-map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
+map("n", "<leader><tab><tab>", "<cmd>$tabnew<cr>", { desc = "New Tab" })
+-- vim.cmd("command! -nargs=* -complete=file -bar -bang -range tabnew execute '$tabnew ' . expand(<q-args>)")
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })

@@ -4,17 +4,17 @@ end
 
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-  group = augroup("checktime"),
+  group = augroup "checktime",
   callback = function()
-    if vim.o.buftype ~= 'nofile' then
-      vim.cmd('checktime')
+    if vim.o.buftype ~= "nofile" then
+      vim.cmd "checktime"
     end
-  end
+  end,
 })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
+  group = augroup "highlight_yank",
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -22,17 +22,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = augroup("resize_splits"),
+  group = augroup "resize_splits",
   callback = function()
     local current_tab = vim.fn.tabpagenr()
-    vim.cmd("tabdo wincmd =")
+    vim.cmd "tabdo wincmd ="
     vim.cmd("tabnext " .. current_tab)
   end,
 })
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
-  group = augroup("last_loc"),
+  group = augroup "last_loc",
   callback = function(event)
     local exclude = { "gitcommit" }
     local buf = event.buf
@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("close_with_q"),
+  group = augroup "close_with_q",
   pattern = {
     "PlenaryTestPopup",
     "help",
@@ -94,13 +94,23 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  group = augroup("auto_create_dir"),
+  group = augroup "auto_create_dir",
   callback = function(event)
-    if event.match:match("^%w%w+://") then
+    if event.match:match "^%w%w+://" then
       return
     end
     local file = vim.loop.fs_realpath(event.match) or event.match
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+  end,
+})
+
+
+-- override :tabnew to behave like :$tabnew
+-- when a new tab is created, move it to the end of the list
+vim.api.nvim_create_autocmd({ "TabNew" }, {
+  group = augroup "tabs",
+  callback = function()
+    vim.cmd"tabmove"
   end,
 })
 

@@ -26,6 +26,13 @@ function M.config()
     local contents = {}
     local marks_length = harpoon:list():length()
     local current_file_path = vim.fn.fnamemodify(vim.fn.expand "%:p", ":.")
+    local ft = vim.bo.filetype
+    -- do not show line if no harpoons, if only 1 tab or if we are on dadshboard
+    if --[[ ft == "dashboard" or  ]](marks_length == 0 and #vim.fn.gettabinfo() == 1) then
+      vim.cmd":set showtabline=0"
+    else
+      vim.cmd":set showtabline=2"
+    end
     for index = 1, marks_length do
       local harpoon_file_path = harpoon:list():get(index).value
       local file_name = harpoon_file_path == "" and "(empty)" or vim.fn.fnamemodify(harpoon_file_path, ":t")
