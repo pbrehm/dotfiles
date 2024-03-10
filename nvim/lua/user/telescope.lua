@@ -6,7 +6,7 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.register {
-    ["<leader>bb"] = { "<cmd>Telescope buffers<cr>", "Telescope Find Buffer" },
+    ["<leader>sb"] = { "<cmd>Telescope buffers<cr>", "Telescope Find Buffer" },
     -- ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     -- ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
@@ -14,8 +14,8 @@ function M.config()
     -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["<leader>/"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
+    ["<leader>sh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
+    ["<leader>sl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
     -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     ["<leader>sk"] = { "<cmd>Telescope keymaps<cr>", "Key Maps" },
   }
