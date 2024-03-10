@@ -17,7 +17,7 @@ local M = {
           center = {
             { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
             { action = "Telescope find_files",                                     desc = " Find file",       icon = " ", key = "f" },
-            -- { action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())",  desc = " Harpooned files", icon = "󱡅 ", key = "h" },
+            { action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())",  desc = " Harpooned files", icon = "󱡅 ", key = "h" },
             { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "g" },
             { action =

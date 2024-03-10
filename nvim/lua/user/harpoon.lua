@@ -11,6 +11,46 @@ function M.config()
   local harpoon = require "harpoon"
   harpoon:setup {}
 
+  harpoon:extend {
+    UI_CREATE = function(cx)
+      vim.keymap.set("n", "1", function()
+        harpoon:list():select(1)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "2", function()
+        harpoon:list():select(2)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "3", function()
+        harpoon:list():select(3)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "4", function()
+        harpoon:list():select(4)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "5", function()
+        harpoon:list():select(5)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "6", function()
+        harpoon:list():select(6)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "7", function()
+        harpoon:list():select(7)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "8", function()
+        harpoon:list():select(8)
+      end, { buffer = cx.bufnr })
+
+      vim.keymap.set("n", "9", function()
+        harpoon:list():select(9)
+      end, { buffer = cx.bufnr })
+    end,
+  }
+
   vim.keymap.set("n", "<s-m>", function()
     harpoon:list():append()
     vim.notify "󱡅  marked file"
