@@ -3,6 +3,10 @@ local M = {
 }
 
 function M.config()
-  require("bqf").setup()
+  require("bqf").setup {
+    preview = {
+      auto_preview = false,
+    },
+  }
 end
 return M
