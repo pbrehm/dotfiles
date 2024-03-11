@@ -5,27 +5,46 @@ local M = {
 
 function M.config()
   local wk = require "which-key"
+  local builtin = require "telescope.builtin"
   wk.register {
-    ["<leader>sb"] = { "<cmd>Telescope buffers<cr>", "Telescope Find Buffer" },
+    ["<leader>sb"] = { builtin.buffers, "Telescope Find Buffer" },
     -- ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     -- ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader><leader>"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+    ["<leader><leader>"] = { builtin.find_files, "Find files" },
     -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>/"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>sh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>sl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
+    ["<leader>/"] = { builtin.live_grep, "Find Text" },
+    ["<leader>sh"] = { builtin.help_tabs, "Help" },
+    ["<leader>sl"] = { builtin.resume, "Last Search" },
     -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    ["<leader>sk"] = { "<cmd>Telescope keymaps<cr>", "Key Maps" },
+    ["<leader>sk"] = { builtin.keymaps, "Key Maps" },
+    ["<leader>s/"] = {
+      function()
+        builtin.live_grep {
+          grep_open_files = true,
+          prompt_title = "Live Grep in Open Files",
+        }
+      end,
+      "[S]earch [/] in Open Files",
+    },
   }
 
   local icons = require "user.resources.icons"
   local actions = require "telescope.actions"
 
-
   require("telescope").setup {
     defaults = {
+
+      layout_config = {
+        horizontal = {
+          -- width = 0.8,
+          height = 0.6,
+          prompt_position = "top",
+          -- preview_cutoff = 120,
+        },
+      },
+      sorting_strategy = "ascending",
       prompt_prefix = icons.ui.Telescope .. " ",
       selection_caret = icons.ui.Forward .. " ",
       entry_prefix = "   ",
@@ -46,37 +65,55 @@ function M.config()
       },
 
       -- mappings = {
-      --   i = {
-      --     ["<C-n>"] = actions.cycle_history_next,
-      --     ["<C-p>"] = actions.cycle_history_prev,
+      -- lots of stuff here that can be cleaned up eventually.
+      -- default mapping below
+      -- ["<C-n>"] = actions.move_selection_next,
+      -- ["<C-p>"] = actions.move_selection_previous,
       --
-      --     ["<C-j>"] = actions.move_selection_next,
-      --     ["<C-k>"] = actions.move_selection_previous,
-      --   },
-      --   n = {
-      --     ["<esc>"] = actions.close,
-      --     ["j"] = actions.move_selection_next,
-      --     ["k"] = actions.move_selection_previous,
-      --     ["q"] = actions.close,
-      --   },
+      -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+      -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+      --
+      -- actions.move_selection_next and actions.move_selection_worse are opposite when promt is on bottom
+      -- make next and previous use same actions to be consistent
+      -- I expect tab and <C-n> to go the same direction
+      -- i = {
+      --   ["<C-n>"] = actions.move_selection_worse,
+      --   ["<C-p>"] = actions.move_selection_better,
+      -- },
+      -- normally these actions use actions.move_selection_worse and actions.move_selection_better
+      -- however when the normal horizontal layout is used with the prompt at the bottom, better and worse is opposite of next and previous
+      -- to make this more consistent, remap <Tab> and <S-Tab> to use next and previous
+
+      -- i = {
+      --   ["<Tab>"] = actions.toggle_selection + actions.move_selection_next,
+      --   ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_previous,
+      --   -- ["<Tab>"] = actions.toggle_selection,
+      --   -- ["<S-Tab>"] = actions.toggle_selection,
+      -- },
+      -- n = {
+      --   ["<Tab>"] = actions.toggle_selection + actions.move_selection_next,
+      --   ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_previous,
+      --   -- ["<Tab>"] = actions.toggle_selection,
+      --   -- ["<S-Tab>"] = actions.toggle_selection,
+      --   }
       -- },
     },
     pickers = {
       -- live_grep = {
-      --   theme = "dropdown",
+      --   theme = "ivy",
       -- },
 
       -- grep_string = {
-      --   theme = "dropdown",
+      --   theme = "ivy",
       -- },
 
       -- find_files = {
-      --   theme = "ropdown",
-      --   previewer = false,
+      --   theme = "ivy",
+      -- --   previewer = false,
       -- },
 
       buffers = {
-        -- theme = "dropdown",
+        -- theme = "ivy",
         -- initial_mode = "normal",
         mappings = {
           i = {
