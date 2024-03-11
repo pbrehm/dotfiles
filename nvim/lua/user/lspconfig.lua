@@ -1,3 +1,34 @@
+-- stolen and enhanced to deal with app prefix
+local find_tsc_bin = function()
+  local node_modules_tsc_binary = vim.fn.findfile("node_modules/.bin/tsc", ".;")
+  if node_modules_tsc_binary ~= "" then
+    return node_modules_tsc_binary
+  end
+  local app_node_modules_tsc_binary = vim.fn.findfile("app/node_modules/.bin/tsc", ".;")
+
+  if app_node_modules_tsc_binary ~= "" then
+    return app_node_modules_tsc_binary
+  end
+
+  return "tsc"
+end
+
+local find_nearest_tsconfig = function()
+  local tsconfig = vim.fn.findfile("tsconfig.json", ".;")
+  if tsconfig ~= "" then
+    return tsconfig
+  end
+
+  local app_tsconfig = vim.fn.findfile("app/tsconfig.json", ".;")
+  if app_tsconfig ~= "" then
+    return app_tsconfig
+  end
+
+
+
+  return nil
+end
+
 local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -11,7 +42,21 @@ local M = {
       config = function()
         require("tsc").setup {
           auto_open_qflist = true,
-          pretty_errors = false,
+          auto_close_qflist = false,
+          auto_focus_qflist = false,
+          auto_start_watch_mode = false,
+          bin_path = find_tsc_bin(),
+          enable_progress_notifications = true,
+          flags = {
+            noEmit = true,
+            project = function()
+              return find_nearest_tsconfig()
+            end,
+            watch = false,
+          },
+          hide_progress_notifications_from_history = true,
+          spinner = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
+          pretty_errors = true,
         }
       end,
     },
@@ -170,5 +215,6 @@ function M.config()
     lspconfig[server].setup(opts)
   end
 end
+
 
 return M
