@@ -2,6 +2,14 @@ local M = {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
   opts = function()
+    -- vim.cmd "highlight DashboardHeader guifg=#FF9E3B"
+    vim.cmd "highlight DashboardHeader guifg=#dcd7ba"
+    -- vim.cmd "highlight DashboardHeader guifg=#7fb4ca"
+
+    -- vim.cmd "highlight DashboardHeader guifg=#C0A36E"
+
+    -- vim.cmd "highlight DashboardHeader guifg=#e6c384"
+    -- vim.cmd "highlight DashboardHeader guifg=#7e9cd8"
     local logo = string.rep("\n", 8) .. require("user.resources.dashboard-logos").logoGhost .. "\n\n"
 
     local opts = {
