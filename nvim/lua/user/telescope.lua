@@ -11,7 +11,12 @@ function M.config()
     -- ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     -- ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader><leader>"] = { builtin.find_files, "Find files" },
+    ["<leader><leader>"] = {
+      function()
+        builtin.find_files { find_command = { "rg", "--files", "--hidden", "-g", "!.git" } }
+      end,
+      "Find files",
+    },
     -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["<leader>/"] = { builtin.live_grep, "Find Text" },
@@ -156,10 +161,10 @@ function M.config()
     },
     extensions = {
       fzf = {
-        fuzzy = true,                   -- false will only do exact matching
+        fuzzy = true, -- false will only do exact matching
         override_generic_sorter = true, -- override the generic sorter
-        override_file_sorter = true,    -- override the file sorter
-        case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+        override_file_sorter = true, -- override the file sorter
+        case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
     },
   }
