@@ -26,6 +26,7 @@ local M = {
             { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
             { action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())",  desc = " Harpooned files", icon = "󱡅 ", key = "h" },
             { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
+            { action = 'lua require("user.util.lazyterm.terminal").open({ "lazygit" })', desc = " Lazy Git", icon = " ", key = "g" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
             { action =
             [[require("telescope.builtin")["find_files"]({ cwd = vim.fn.stdpath("config") })]],
