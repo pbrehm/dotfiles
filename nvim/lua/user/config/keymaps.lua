@@ -28,6 +28,11 @@ map("n", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search
 map("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 
+
+-- center after up or down
+map({"n", "x"}, "<C-d>", "<C-d>zz")
+map({"n", "x"}, "<C-u>", "<C-u>zz")
+
 -- Add undo break-points
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
@@ -105,4 +110,3 @@ map("n", "<leader>gg", function() terminal.open({ "lazygit" }, {esc_esc = false,
 --
 -- send pasted over text to void buffer so that I don't lose what I'm pasting
 vim.api.nvim_set_keymap("x", "p", [["_dP]], { noremap = true, silent = true })
-
