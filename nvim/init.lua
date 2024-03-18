@@ -34,7 +34,8 @@ spec "user.mini-surround"
 spec "user.ufo"
 spec "user.comment"
 -- spec "user.autopairs"
-spec "user.harpoon"
+-- spec "user.harpoon" -- when you open nvim for the first time and use harpoon to enter a file, the folds do not work
+spec "user.grapple" -- replaced harpoon.
 spec "user.navbuddy" -- makes cursor black. on nightly. Probably an nui thing
 spec "user.persistence"
 spec "user.dashboard-nvim"

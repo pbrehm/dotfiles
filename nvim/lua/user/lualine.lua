@@ -21,8 +21,8 @@ function M.config()
   -- vim.cmd "highlight HarpoonNumberInactive guifg=#FF00FF"
   -- vim.cmd "highlight HarpoonInactive guifg=#0000FF"
 
-  local harpoon = require "harpoon"
   function Harpoon_files()
+    local harpoon = require "harpoon"
     local contents = {}
     local marks_length = harpoon:list():length()
     local current_file_path = vim.fn.fnamemodify(vim.fn.expand "%:p", ":.")
@@ -65,6 +65,58 @@ function M.config()
     return table.concat(contents)
   end
 
+  function Grapple_marks()
+    local grapple = require "grapple"
+    local contents = {}
+    local tags = grapple:tags()
+    local tags_length = #tags
+    -- vim.notify(vim.inspect(grapple:tags()))
+    -- path is the relevent key
+    local current_file_path = vim.fn.fnamemodify(vim.fn.expand "%:p", ":.")
+    local ft = vim.bo.filetype
+    -- do not show line if no harpoons, if only 1 tab or if we are on dadshboard
+    if --[[ ft == "dashboard" or  ]]
+      tags_length == 0 and #vim.fn.gettabinfo() == 1
+    then
+      vim.cmd ":set showtabline=0"
+    else
+      vim.cmd ":set showtabline=2"
+    end
+    for index = 1, tags_length do
+      local grapple_file_path = tags[index].path
+      local Path = require "plenary.path"
+      local relpath = Path:new(grapple_file_path):make_relative(vim.loop.cwd())
+
+      local file_name = relpath == "" and "(empty)" or vim.fn.fnamemodify(grapple_file_path, ":t")
+
+      if Truncate_path then
+        -- logic to add parth with single characters for file names
+        local parts = vim.split(relpath, "[\\/]")
+        local truncated_parts = {}
+        -- if #parts > 3 then
+        for _, part in pairs(parts) do
+          if --[[ _ ~= 1 and ]] -- don't truncate root dir
+            _ ~= #parts
+            --[[ and _ ~= #parts -1  ]]
+            -- don't truncate parent dir
+          then
+            part = string.sub(part, 1, 1)
+          end
+          table.insert(truncated_parts, part)
+        end
+        -- end
+        local sep = "/"
+        file_name = table.concat(truncated_parts, sep)
+      end
+
+      if current_file_path == relpath then
+        contents[index] = string.format("%%#HarpoonNumberActive# %s. %%#HarpoonActive#%s ", index, file_name)
+      else
+        contents[index] = string.format("%%#HarpoonNumberInactive# %s. %%#HarpoonInactive#%s ", index, file_name)
+      end
+    end
+    return table.concat(contents)
+  end
   local icons = require "user.resources.icons"
   require("lualine").setup {
     tabline = {
@@ -87,7 +139,8 @@ function M.config()
         },
       },
       lualine_b = {
-        Harpoon_files,
+        -- Harpoon_files,
+        Grapple_marks,
       },
     },
     options = {
