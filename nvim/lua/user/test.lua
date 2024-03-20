@@ -2,6 +2,7 @@ local M = {
   "nvim-neotest/neotest",
   dependencies = {
     "haydenmeade/neotest-jest",
+    "nvim-neotest/nvim-nio"
   },
   keys = {
     {
