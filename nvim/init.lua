@@ -17,6 +17,7 @@ spec "user.cmp"
 spec "user.colorschemes.kanagawa"
 -- spec "user.colorschemes.darkplus"
 spec "user.neotree"
+spec "user.nvim-lsp-file-operations" -- gives neo tree lsp rename integration. must be loaded after neotree
 spec "user.indentline"
 spec "user.mini-indentscope"
 spec "user.illuminate"
