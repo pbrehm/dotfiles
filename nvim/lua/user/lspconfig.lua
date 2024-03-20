@@ -24,8 +24,6 @@ local find_nearest_tsconfig = function()
     return app_tsconfig
   end
 
-
-
   return nil
 end
 
@@ -86,11 +84,9 @@ M.on_attach = function(client, bufnr)
     local toggle = require "user.util.toggle"
     toggle.diagnostics_buffer(false)
   end
-  -- if not string.find(cmd, "yaml%-language%-server") then
-  -- vim.notify("supports inlay hints but not yamlls")
+
+  -- if client.supports_method "textDocument/inlayHint" then
   -- vim.lsp.inlay_hint.enable(bufnr, true)
-  -- add toggle inlay hints only when supported
-  -- end
   -- end
 end
 
@@ -103,6 +99,11 @@ end
 M.toggle_inlay_hints = function()
   local bufnr = vim.api.nvim_get_current_buf()
   vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
+  if vim.lsp.inlay_hint.is_enabled(bufnr) then
+    vim.notify "Inlay hints enabled for buffer"
+  else
+    vim.notify "Inlay hints disabled for buffer"
+  end
 end
 
 function M.config()
@@ -215,6 +216,5 @@ function M.config()
     lspconfig[server].setup(opts)
   end
 end
-
 
 return M
