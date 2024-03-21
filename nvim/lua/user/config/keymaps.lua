@@ -18,7 +18,6 @@ map("n", "<M-J>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<M-H>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<M-L>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 -- then center afterwords
 map("n", "n", "'Nn'[v:searchforward].'zvzz'", { expr = true, desc = "Next search result" })
@@ -28,16 +27,14 @@ map("n", "N", "'nN'[v:searchforward].'zvzz'", { expr = true, desc = "Prev search
 map("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 map("o", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 
-
 -- center after up or down
-map({"n", "x"}, "<C-d>", "<C-d>zz")
-map({"n", "x"}, "<C-u>", "<C-u>zz")
+map({ "n", "x" }, "<C-d>", "<C-d>zz")
+map({ "n", "x" }, "<C-u>", "<C-u>zz")
 
 -- Add undo break-points
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
-
 
 -- better indenting
 map("v", "<", "<gv")
@@ -82,6 +79,7 @@ map("n", "<leader>uw", ":set wrap!<CR>", { desc = "toggle line wrap for buffer" 
 local toggle = require("user.util.toggle")
 map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
+map("n", "<leader>us", function () toggle.spell() end, { desc = "Toggle Spell check for window" })
 
 map  ( 'n', '<M-1>', ':1tabnext<CR>', { desc = "Go to tab #1", noremap = true, silent = true } )
 map  ( 'n', '<M-2>', ':2tabnext<CR>', { desc = "Go to tab #2", noremap = true, silent = true } )

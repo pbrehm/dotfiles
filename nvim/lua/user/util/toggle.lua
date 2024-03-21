@@ -25,4 +25,18 @@ function M.diagnostics()
   end
 end
 
+function M.spell()
+  -- Toggle spell check
+  vim.wo.spell = not vim.wo.spell
+
+  -- Check if spell check is enabled or disabled and notify the user accordingly
+  local spell_enabled = vim.wo.spell
+  if spell_enabled then
+    -- Spell check is enabled
+    vim.notify("Spell check enabled for window")
+  else
+    -- Spell check is disabled
+    vim.notify("Spell check disabled for window")
+  end
+end
 return M
