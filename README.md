@@ -54,3 +54,27 @@ $ defaults write org.alacritty -int 0
 lazyvim has my custom lazyvim setup.
 
 nvim has custom nvim setup based on https://github.com/LunarVim/Launch.nvim
+
+# Undercurl for WSL
+
+ to get this to work outside of tmux follow these steps
+ ref - https://github.com/neovim/neovim/issues/26744#issuecomment-1918867789
+ :h terminfo https://neovim.io/doc/user/term.html
+
+```
+ curl -LO https://invisible-island.net/datafiles/current/terminfo.src.gz
+ gunzip terminfo.src.gz
+```
+then edit the xterm-256color to be like this. (only middle line is added)
+
+```
+xterm-256color|xterm with 256 colors,
+	Smulx=\E[4:%p1%dm,
+	use=xterm+osc104, use=xterm+256color, use=xterm-new,
+```
+
+then install it
+
+```
+tic -x terminfo.src
+```
