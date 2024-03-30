@@ -6,6 +6,7 @@ local M = {
 
 function M.config()
   require("kanagawa").setup {
+    undercurl = false,
     colors = {
       theme = {
         wave = {
