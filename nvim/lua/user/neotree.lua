@@ -34,6 +34,7 @@ function M.config()
         ["C"] = "close_all_nodes",
         ["c"] = "close_node",
         ["<space>"] = "none",
+        ["<bs>"] = "none" -- disabled since easy to accientl press on new keyboard but there is no undo function
       },
     },
     filesystem = {
