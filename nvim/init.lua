@@ -48,7 +48,7 @@ spec "user.bqf"
 spec "user.refactoring"
 spec "user.aerial"
 spec "user.oil"
--- spec "user.dressing"
+spec "user.dressing"
 -- spec "user.noice"
 -- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
 -- spec "user.nvim-window"
