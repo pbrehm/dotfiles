@@ -51,6 +51,9 @@ function M.config()
   local icons = require "user.resources.icons"
 
   cmp.setup {
+    completion = {
+      completeopt = "menu,menuone,noinsert",
+    },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body) -- For `luasnip` users.
