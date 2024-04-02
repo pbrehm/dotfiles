@@ -30,6 +30,10 @@ ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 ln -s ~/dotfiles/alacrity/.alacrity ~/.alacritty
 .alacritty -> /home/pbrehm/dotfiles/alacritty/.alacritty
 ```
+
+```
+ ln -s ~/dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
+```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
