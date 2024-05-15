@@ -34,7 +34,8 @@ function M.init()
       "neotest-output",
       "neotest-output-panel",
       "DiffviewFiles",
-      "Aerial"
+      "Aerial",
+      "Outline"
     },
     callback = function()
       vim.b.miniindentscope_disable = true

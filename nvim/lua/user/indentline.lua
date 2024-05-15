@@ -24,7 +24,8 @@ function M.config()
         "notify",
         "toggleterm",
         "lazyterm",
-        "Aerial"
+        "Aerial",
+        "Outline"
       },
     },
   }
