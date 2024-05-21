@@ -24,6 +24,7 @@ function M.config()
     ["<leader>sl"] = { builtin.resume, "Last Search" },
     -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     ["<leader>sk"] = { builtin.keymaps, "Key Maps" },
+    ["<leader>sm"] = { builtin.marks, "Marks" },
     ["<leader>s/"] = {
       function()
         builtin.live_grep {
