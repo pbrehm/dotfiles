@@ -87,8 +87,8 @@ function M.statuscolumn()
       end
     end)
     -- Left: mark or non-git sign
-    -- components[1] = M.icon(M.get_mark(buf, vim.v.lnum) or left) -- PB: original
-    components[1] = M.icon(left) -- PB: do not display marks in status cloumn
+    components[1] = M.icon(M.get_mark(buf, vim.v.lnum) or left) -- PB: original
+    -- components[1] = M.icon(left) -- PB: do not display marks in status cloumn
     -- Right: fold icon or git sign (only if file)
     components[3] = is_file and M.icon(fold or right) or ""
   end
