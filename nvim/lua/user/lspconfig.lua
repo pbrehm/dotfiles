@@ -98,11 +98,11 @@ end
 
 M.toggle_inlay_hints = function()
   local bufnr = vim.api.nvim_get_current_buf()
-  vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
-  if vim.lsp.inlay_hint.is_enabled(bufnr) then
-    vim.notify "Inlay hints enabled for buffer"
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr }, { bufnr })
+  if vim.lsp.inlay_hint.is_enabled { bufnr } then
+    vim.notify "Inlay hints enabled"
   else
-    vim.notify "Inlay hints disabled for buffer"
+    vim.notify "Inlay hints disabled"
   end
 end
 
