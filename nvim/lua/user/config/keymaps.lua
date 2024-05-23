@@ -80,7 +80,7 @@ local toggle = require("user.util.toggle")
 map("n", "<leader>ud", function() toggle.diagnostics_buffer(true) end, { desc = "Toggle Diagnostics for current buffer" })
 map("n", "<leader>uD", function() toggle.diagnostics() end, { desc = "Toggle Diagnostics globally" })
 map("n", "<leader>us", function () toggle.spell() end, { desc = "Toggle Spell check for window" })
-
+map('n', '<leader>ul', function() toggle.relativeLineNumbers() end, { desc = "Toggle Relative line numbers" })
 map  ( 'n', '<M-1>', ':1tabnext<CR>', { desc = "Go to tab #1", noremap = true, silent = true } )
 map  ( 'n', '<M-2>', ':2tabnext<CR>', { desc = "Go to tab #2", noremap = true, silent = true } )
 map  ( 'n', '<M-3>', ':3tabnext<CR>', { desc = "Go to tab #3", noremap = true, silent = true } )

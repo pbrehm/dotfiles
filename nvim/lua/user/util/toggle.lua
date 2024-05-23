@@ -33,10 +33,20 @@ function M.spell()
   local spell_enabled = vim.wo.spell
   if spell_enabled then
     -- Spell check is enabled
-    vim.notify("Spell check enabled for window")
+    vim.notify "Spell check enabled for window"
   else
     -- Spell check is disabled
-    vim.notify("Spell check disabled for window")
+    vim.notify "Spell check disabled for window"
+  end
+end
+
+function M.relativeLineNumbers()
+  if vim.wo.relativenumber then
+    vim.wo.relativenumber = false
+    vim.notify "relative line number disabled"
+  else
+    vim.wo.relativenumber = true
+    vim.notify "relative line number enabled"
   end
 end
 return M
