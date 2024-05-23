@@ -1,4 +1,4 @@
--- not sure where I got this but I had it in my config
+-- https://github.com/yioneko/vtsls/blob/bd2df5a2d45cbc087e4fe285ec7c7396fd96e9cf/packages/service/configuration.schema.json#L98
 return {
   settings = {
     typescript = {
@@ -10,7 +10,9 @@ return {
       inlayHints = {
         parameterNames = { enabled = "literals" },
         parameterTypes = { enabled = true },
-        variableTypes = { enabled = true },
+        variableTypes = { enabled = true
+          -- , suppressWhenTypeMatchesName = { enabled = false }
+        },
         propertyDeclarationTypes = { enabled = true },
         functionLikeReturnTypes = { enabled = true },
         enumMemberValues = { enabled = true },
