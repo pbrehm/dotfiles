@@ -1,8 +1,13 @@
 local actions_state = require "telescope.actions.state"
 local actions = require "telescope.actions"
 
-local function diff_view_open_hash(hash)
-  local cmd = "DiffviewOpen " .. hash .. "^1" .. ".." .. hash
+local function diff_view_open_hash(hash, singleCommit)
+  local cmd
+  if singleCommit then
+    cmd = "DiffviewOpen " .. hash .. "^1" .. ".." .. hash
+  else
+    cmd = "DiffviewOpen " .. hash
+  end
   vim.api.nvim_command(cmd)
 end
 
@@ -25,24 +30,39 @@ local function diff_view_open_blame_commit()
     if hash == "00000000" or hash == "fatal: n" then
       vim.notify "Not Commited Yet"
     else
-      diff_view_open_hash(hash)
+      diff_view_open_hash(hash, true)
     end
   end
 end
 
-local telescope_open_commit = function(prompt_bufnr)
+local telescope_open_single_commit = function(prompt_bufnr)
   local selected_entry = actions_state.get_selected_entry()
   actions.close(prompt_bufnr)
-  diff_view_open_hash(selected_entry.value)
+  diff_view_open_hash(selected_entry.value, true)
 end
 
-local opts = {
-  attach_mappings = function(_, map)
-    map("n", "<cr>", telescope_open_commit)
-    map("i", "<cr>", telescope_open_commit)
-    return true
-  end,
-}
+local telescope_open_commit_to_now = function(prompt_bufnr)
+  local selected_entry = actions_state.get_selected_entry()
+  actions.close(prompt_bufnr)
+  diff_view_open_hash(selected_entry.value, false)
+end
+
+local getTelescopeOpts = function(singleCommit)
+  local telescopeFunc
+  if singleCommit then
+    telescopeFunc = telescope_open_single_commit
+  else
+    telescopeFunc = telescope_open_commit_to_now
+  end
+
+  return {
+    attach_mappings = function(_, map)
+      map("n", "<cr>", telescopeFunc)
+      map("i", "<cr>", telescopeFunc)
+      return true
+    end,
+  }
+end
 
 local M = {
   "sindrets/diffview.nvim",
@@ -52,20 +72,34 @@ local M = {
 M.keys = {
   { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "DiffviewFileHistory (branch)" },
   { "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffviewFileHistory (file)" },
-  { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffviewOpen" },
+  { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffviewOpen (uncommited changes)" },
   {
     "<leader>gc",
     function()
-      require("telescope.builtin").git_commits(opts)
+      require("telescope.builtin").git_commits(getTelescopeOpts(true))
     end,
-    desc = "Telescope commits (branch) -> DiffviewOpen compare to now",
+    desc = ": branch commits, diff of commit",
   },
   {
     "<leader>gC",
     function()
-      require("telescope.builtin").git_bcommits(opts)
+      require("telescope.builtin").git_commits(getTelescopeOpts(false))
     end,
-    desc = "Telescope commits (file) -> DiffviewOpen compare to now",
+    desc = ": branch commits, diff after this commit",
+  },
+  {
+    "<leader>gfc",
+    function()
+      require("telescope.builtin").git_bcommits(getTelescopeOpts(true))
+    end,
+    desc = ": file commits, diff of commit",
+  },
+  {
+    "<leader>gfC",
+    function()
+      require("telescope.builtin").git_bcommits(getTelescopeOpts(false))
+    end,
+    desc = ": file commits, diff after this commit",
   },
   {
     "<leader>gB",
