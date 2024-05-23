@@ -25,7 +25,8 @@ function M.config()
         "toggleterm",
         "lazyterm",
         "Aerial",
-        "Outline"
+        "Outline",
+        "Git"
       },
     },
   }
