@@ -19,21 +19,13 @@ function M.config()
     },
     -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>/"] = { builtin.live_grep, "Find Text" },
+    ["<leader>/"] = { builtin.live_grep, "Find text in all files" },
     ["<leader>sh"] = { builtin.help_tabs, "Help" },
     ["<leader>sl"] = { builtin.resume, "Last Search" },
     -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     ["<leader>sk"] = { builtin.keymaps, "Key Maps" },
     ["<leader>sm"] = { builtin.marks, "Marks" },
-    ["<leader>s/"] = {
-      function()
-        builtin.live_grep {
-          grep_open_files = true,
-          prompt_title = "Live Grep in Open Files",
-        }
-      end,
-      "[S]earch [/] in Open Files",
-    },
+    ["<leader>s/"] = { builtin.current_buffer_fuzzy_find, "[S]earch [/] in Open Buffer" }
   }
 
   local icons = require "user.resources.icons"
