@@ -152,3 +152,4 @@ KEYTIMEOUT=1
 # eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/custom-one-dark.json')"
 # eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/theme.json')"
 # eval "$(oh-my-posh init zsh --config '~/dotfiles/oh-my-posh/tokyo-theme.json')"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
