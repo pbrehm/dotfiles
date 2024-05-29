@@ -258,6 +258,13 @@ function M.config()
           processId = require("dap.utils").pick_process,
           cwd = "${workspaceFolder}",
         },
+        -- { // attach to hard coded port
+        --   type = "pwa-node",
+        --   request = "attach",
+        --   name = "Attach to port 5858",
+        --   cwd = "${workspaceFolder}",
+        --   port = "5858"
+        -- },
       }
     end
   end
