@@ -53,6 +53,7 @@ spec "user.dressing"
 -- spec "user.noice"
 -- spec "user.tabby" -- nice but not needed at this time. basic configure from launch.nvim
 -- spec "user.nvim-window"
+spec "user.markdown-preview"
 
 -- git
 spec "user.gitsigns"
