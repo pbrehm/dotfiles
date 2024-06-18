@@ -15,11 +15,15 @@ end
 
 function M.config()
   vim.keymap.set("n", "<leader>ut", M.toggle_truncate, { desc = "Toggle tabline harpoon path truncation" })
-
+  -- kanagawa colors
   vim.cmd "highlight HarpoonNumberActive guifg=#FF9E3B"
   vim.cmd "highlight HarpoonActive guifg=#FF9E3B"
-  -- vim.cmd "highlight HarpoonNumberInactive guifg=#FF00FF"
-  -- vim.cmd "highlight HarpoonInactive guifg=#0000FF"
+
+  -- moonfly colors
+  -- vim.cmd "highlight HarpoonNumberInactive guifg=#c6c6c6"
+  -- vim.cmd "highlight HarpoonInactive guifg=#c6c6c6"
+  -- vim.cmd "highlight HarpoonNumberActive guifg=#FF9E3B"
+  -- vim.cmd "highlight HarpoonActive guifg=#FF9E3B"
 
   function Harpoon_files()
     local harpoon = require "harpoon"
