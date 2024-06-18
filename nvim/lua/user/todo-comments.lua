@@ -3,6 +3,7 @@ local tagsCommand = "keywords=" .. tags
 
 local M = {
   "folke/todo-comments.nvim",
+  commit = "a7e39ae9e74f2c8c6dc4eea6d40c3971ae84752d",
   cmd = { "TodoTrouble", "TodoTelescope" },
   config = true,
   event = "BufEnter",
