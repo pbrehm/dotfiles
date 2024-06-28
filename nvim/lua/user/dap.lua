@@ -86,14 +86,14 @@ M.keys = {
     desc = "Run Last",
   },
   {
-    "<leader>do",
+    "<leader>dO",
     function()
       require("dap").step_out()
     end,
     desc = "Step Out",
   },
   {
-    "<leader>dO",
+    "<leader>do",
     function()
       require("dap").step_over()
     end,
@@ -164,12 +164,14 @@ M.dependencies = {
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open {}
       end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close {}
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close {}
-      end
+      -- only automate the openeing of the debug adapter since the termination event is triggered many times cuasing flashing
+      -- dap.listeners.before.event_terminated["dapui_config"] = function(a) -- this one gets triggered a bunch
+        -- vim.notify(vim.inspect(a)) -- debugging purposes
+        -- dapui.close {}
+      -- end
+      -- dap.listeners.before.event_exited["dapui_config"] = function()
+      --   dapui.close {}
+      -- end
     end,
   },
 
