@@ -81,8 +81,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
 	vi-mode
+  fzf
 	)
 
+
+# fzf keybinds
+# Ctrl+r	Search the recent command history based on $HISTFILE
+# Ctrl+t	Recursively search for the filename in the $PWD
+# Alt+c	Recursively search for a directory name under the $PWD, and cd into the selected directory
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
