@@ -1,0 +1,32 @@
+[aws]
+disabled = true
+
+[directory]
+style = '#00a4ef'
+truncation_length = 5
+truncate_to_repo = false
+before_repo_root_style = '#007a9e'
+repo_root_style = '#00a4ef'
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold green'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[package]
+format = '[$symbol$version]($style) '
+
+[git_status]
+# format has stash removed
+format = '([$ahead_behind]($style)[$conflicted$stashed$deleted$renamed$modified$typechanged$staged$untracked](#00a4ef) )'
+style = 'bold green'
+ahead = '⇡${count} '
+diverged = '⇡${ahead_count}⇣${behind_count} '
+behind = '⇣${count} '
+stashed = '󰴮'
+
+# [git_metrics]
+# disabled = false
+

@@ -15,7 +15,7 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 nvim -> /home/pbrehm/dotfiles/nvim
 ```
 
-- using oh my zsh with powerlevel10k theme
+- using oh my zsh with powerlevel10k theme (on life support, using starsip now)
 ```
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 .zshrc -> /home/pbrehm/dotfiles/.zshrc
@@ -25,6 +25,13 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 .p10k.zsh -> /home/pbrehm/dotfiles/.p10k.zsh
 ```
+
+- starship (https://starship.rs/)
+```
+ln -s ~/dotfiles/.starship.toml ~/.config/starship.toml
+.config/starship.toml -> /home/pbrehm/dotfiles/starship.toml
+```
+
 
 ```
 ln -s ~/dotfiles/alacrity/.alacrity ~/.alacritty
