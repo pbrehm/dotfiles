@@ -36,6 +36,7 @@ spec "user.spectre"
 spec "user.mini-surround"
 spec "user.ufo"
 spec "user.comment"
+spec "user.yanky"
 -- spec "user.autopairs"
 -- spec "user.harpoon" -- when you open nvim for the first time and use harpoon to enter a file, the folds do not work
 spec "user.grapple" -- replaced harpoon.
