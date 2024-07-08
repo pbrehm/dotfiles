@@ -20,7 +20,7 @@ format = '[$symbol$version]($style) '
 
 [git_status]
 # format has stash removed
-format = '([$ahead_behind]($style)[$conflicted$stashed$deleted$renamed$modified$typechanged$staged$untracked](#00a4ef) )'
+format = '([$ahead_behind]($style)[$stashed](#00a4ef)[$conflicted$deleted$renamed$modified$typechangedrstaged$untracked ](bold red))'
 style = 'bold green'
 ahead = '⇡${count} '
 diverged = '⇡${ahead_count}⇣${behind_count} '
