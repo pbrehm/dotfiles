@@ -18,6 +18,8 @@ format = '[$symbol($version )]($style)'
 [package]
 format = '[$symbol$version]($style) '
 
+[lua]
+format = '[$symbol($version )]($style)'
 [git_status]
 # format has stash removed
 format = '([$ahead_behind](bold green)[$conflicted$deleted$renamed$modified$typechangedrstaged$untracked ]($style))'
