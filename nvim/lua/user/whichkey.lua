@@ -1,5 +1,6 @@
 local M = {
   "folke/which-key.nvim",
+  commit = "af4ded85542d40e190014c732fa051bdbf88be3d"
 }
 
 function M.config()
