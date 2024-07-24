@@ -6,26 +6,27 @@ local M = {
 function M.config()
   local wk = require "which-key"
   local builtin = require "telescope.builtin"
-  wk.register {
-    ["<leader>sb"] = { builtin.buffers, "Telescope Find Buffer" },
-    -- ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    -- ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    -- ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader><leader>"] = {
+  wk.add {
+    { "<leader>sb", builtin.buffers, desc = "Telescope Find Buffer" },
+    -- {"<leader>fb", "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    -- {"<leader>fc", "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    -- {"<leader>ff", "<cmd>Telescope find_files<cr>", "Find files" },
+    {
+      "<leader><leader>",
       function()
         builtin.find_files { find_command = { "rg", "--files", "--hidden", "-g", "!.git" } }
       end,
-      "Find files",
+      desc = "Find files",
     },
-    -- ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    -- ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>/"] = { builtin.live_grep, "Find text in all files" },
-    ["<leader>sh"] = { builtin.help_tabs, "Help" },
-    ["<leader>sl"] = { builtin.resume, "Last Search" },
-    -- ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    ["<leader>sk"] = { builtin.keymaps, "Key Maps" },
-    ["<leader>sm"] = { builtin.marks, "Marks" },
-    ["<leader>s/"] = { builtin.current_buffer_fuzzy_find, "[S]earch [/] in Open Buffer" }
+    -- {"<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    -- {"<leader>ft", "<cmd>Telescope live_grep<cr>", "Find Text" },
+    { "<leader>/", builtin.live_grep, desc = "Find text in all files" },
+    { "<leader>sh", builtin.help_tabs, desc = "Help" },
+    { "<leader>sl", builtin.resume, desc = "Last Search" },
+    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
+    { "<leader>sk", builtin.keymaps, desc = "Key Maps" },
+    { "<leader>sm", builtin.marks, desc = "Marks" },
+    { "<leader>s/", builtin.current_buffer_fuzzy_find, desc = "[S]earch [/] in Open Buffer" },
   }
 
   local icons = require "user.resources.icons"

@@ -1,6 +1,5 @@
 local M = {
-  "folke/which-key.nvim",
-  commit = "af4ded85542d40e190014c732fa051bdbf88be3d"
+  "folke/which-key.nvim"
 }
 
 function M.config()
@@ -64,11 +63,9 @@ function M.config()
   }
 
   local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
   }
 
-  which_key.register(mappings, opts)
+  which_key.add(mappings, opts)
 end
 
 return M

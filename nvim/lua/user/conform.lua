@@ -26,12 +26,13 @@ function M.config()
     },
   }
   local wk = require "which-key"
-  wk.register {
-    ["<leader>cf"] = {
+  wk.add {
+    {
+      "<leader>cf",
       function()
         require("conform").format()
       end,
-      "Format",
+      desc = "Format",
       mode = { "v", "n" },
     },
   }

@@ -8,17 +8,17 @@ M.config = function()
 
   local gs = require "gitsigns"
   local wk = require "which-key"
-  wk.register {
-    ["]h"] = { function() gs.next_hunk { navigation_message = false } end, "Next Hunk", },
-    ["[h"] = { function() gs.prev_hunk { navigation_message = false } end, "Prev Hunk", },
-    ["<leader>gp"] = { function() gs.preview_hunk_inline() end, "Preview Hunk Inline", },
-    ["<leader>gb"] = { function() gs.blame_line { full = true } end, "Blame", },
-    ["<leader>gS"] = { function() gs.stage_buffer() end, "Reset Buffer", },
-    ["<leader>gR"] = { function() gs.reset_buffer() end, "Reset Buffer", },
-    ["<leader>gs"] = { function() gs.stage_hunk() end, "Stage Hunk", },
-    ["<leader>gr"] = { function() gs.reset_hunk() end, "Reset Hunk", },
-    ["<leader>gu"] = { function() gs.undo_stage_hunk() end, "Undo Stage Hunk", },
-    -- ["<leader>gd"] = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff", },
+  wk.add {
+    {"]h", function() gs.next_hunk { navigation_message = false } end, desc= "Next Hunk", },
+    {"[h", function() gs.prev_hunk { navigation_message = false } end, desc= "Prev Hunk", },
+    {"<leader>gp", function() gs.preview_hunk_inline() end, desc= "Preview Hunk Inline", },
+    {"<leader>gb", function() gs.blame_line { full = true } end, desc= "Blame", },
+    {"<leader>gS", function() gs.stage_buffer() end, desc= "Reset Buffer", },
+    {"<leader>gR", function() gs.reset_buffer() end, desc= "Reset Buffer", },
+    {"<leader>gs", function() gs.stage_hunk() end, desc= "Stage Hunk", },
+    {"<leader>gr", function() gs.reset_hunk() end, desc= "Reset Hunk", },
+    {"<leader>gu", function() gs.undo_stage_hunk() end, desc= "Undo Stage Hunk", },
+    -- {"<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Git Diff", },
   }
 
   require("gitsigns").setup {

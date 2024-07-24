@@ -109,12 +109,13 @@ end
 function M.config()
   require("lspconfig.configs").vtsls = require("vtsls").lspconfig
   local wk = require "which-key"
-  wk.register {
-    ["<leader>ca"] = {
+  wk.add {
+    {
+      "<leader>ca",
       function()
         vim.lsp.buf.code_action()
       end,
-      "Code Action",
+      desc = "Code Action",
       mode = { "n", "v" },
     },
     -- formatter keybind added to conform
@@ -122,30 +123,33 @@ function M.config()
     --   "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
     --   "Format",
     -- },
-    ["<leader>ci"] = { "<cmd>LspInfo<cr>", "Info" },
+    { "<leader>ci", "<cmd>LspInfo<cr>", desc = "Info" },
     -- ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-    ["<leader>uh"] = {
+    {
+      "<leader>uh",
       function()
         require("user.lspconfig").toggle_inlay_hints()
       end,
-      "Hints",
+      desc = "Hints",
     },
     -- ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-    ["<leader>cA"] = {
+    {
+      "<leader>cA",
       function()
         vim.lsp.codelens.run()
       end,
-      "CodeLens Action",
+      desc = "CodeLens Action",
     },
-    -- ["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-    ["<leader>cr"] = {
+    -- {"<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+    {
+      "<leader>cr",
       function()
         vim.lsp.buf.rename()
       end,
-      "Rename",
+      desc = "Rename",
     },
-    ["<leader>co"] = { "<cmd>VtsExec organize_imports<cr>", "Organize Imports (vtsls)" },
-    ["<leader>cR"] = { "<cmd>VtsExec remove_unused_imports<cr>", "Remove Unused Imports (vtsls)" },
+    { "<leader>co", "<cmd>VtsExec organize_imports<cr>", desc = "Organize Imports (vtsls)" },
+    { "<leader>cR", "<cmd>VtsExec remove_unused_imports<cr>", desc = "Remove Unused Imports (vtsls)" },
   }
 
   local lspconfig = require "lspconfig"
