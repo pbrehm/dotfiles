@@ -1,6 +1,7 @@
 local M = {
   "gbprod/yanky.nvim",
   desc = "Better Yank/Paste",
+  lazy = false,
   opts = {
     highlight = { timer = 150 },
   },
