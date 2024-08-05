@@ -1,7 +1,7 @@
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
-  main = "ibl"
+  main = "ibl",
 }
 
 function M.config()
@@ -10,7 +10,7 @@ function M.config()
       char = "│",
       tab_char = "│",
     },
-    scope = { enabled = false },
+    scope = { enabled = true, show_start = false, show_end = false },
     exclude = {
       filetypes = {
         "help",
@@ -26,7 +26,7 @@ function M.config()
         "lazyterm",
         "Aerial",
         "Outline",
-        "Git"
+        "Git",
       },
     },
   }
