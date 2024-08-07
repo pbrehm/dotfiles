@@ -162,3 +162,5 @@ KEYTIMEOUT=1
 
 # starship
 eval "$(starship init zsh)"
+
+export PATH=$PATH:/usr/local/go/bin
