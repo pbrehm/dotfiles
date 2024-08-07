@@ -16,6 +16,7 @@ function M.config()
     "jsonls",
     "eslint",
     "yamlls",
+    "gopls"
   }
 
   require("mason-tool-installer").setup {

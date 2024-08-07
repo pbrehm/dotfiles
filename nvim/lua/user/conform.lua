@@ -23,6 +23,7 @@ function M.config()
       ["handlebars"] = { "prettierd", "eslint_d" },
       ["sql"] = { "sql_formatter" },
       ["lua"] = { "stylua" },
+      ["go"] = { "gofmt" },
     },
   }
   local wk = require "which-key"

@@ -163,6 +163,7 @@ function M.config()
     "jsonls",
     "eslint",
     "yamlls",
+    "gopls"
   }
 
   local default_diagnostic_config = {
