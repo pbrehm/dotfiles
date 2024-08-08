@@ -102,8 +102,6 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
-local terminal = require("user.util.lazyterm.terminal")
-map("n", "<leader>gg", function() terminal.open({ "lazygit" }) end, { desc = "Lazygit" })
 -- personal keybinds
 --
 -- send pasted over text to void buffer so that I don't lose what I'm pasting

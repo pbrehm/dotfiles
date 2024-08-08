@@ -62,6 +62,7 @@ spec "user.markdown-preview"
 -- git
 spec "user.gitsigns"
 spec "user.gitdiff"
+spec "user.lazygit"
 
 -- test
 spec "user.test"
