@@ -67,7 +67,6 @@ opt.fillchars = {
   eob = " ",
 }
 
-vim.opt.statuscolumn = [[%!v:lua.require'user.util.ui'.statuscolumn()]]
 
 -- default hides on launch and unhids based on logic in lualine tabs
 vim.cmd":set showtabline=0"
