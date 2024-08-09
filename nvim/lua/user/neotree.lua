@@ -45,7 +45,9 @@ function M.config()
         event = "vim_buffer_enter",
         handler = function()
           if vim.bo.filetype == "neo-tree" then
-            vim.cmd [[setlocal number relativenumber cursorlineopt=both]]
+            vim.cmd [[setlocal number relativenumber 
+            " cursorlineopt=both
+            ]]
           end
         end,
       },

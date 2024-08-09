@@ -66,6 +66,7 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+opt.cursorlineopt = "screenline"
 
 
 -- default hides on launch and unhids based on logic in lualine tabs
