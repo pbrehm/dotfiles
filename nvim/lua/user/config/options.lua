@@ -1,23 +1,11 @@
--- This file is automatically loaded by plugins.core
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
--- Enable LazyVim auto format
--- vim.g.autoformat = true
-
--- LazyVim root dir detection
--- Each entry can be:
--- * the name of a detector function like `lsp` or `cwd`
--- * a pattern or array of patterns like `.git` or `lua`.
--- * a function with signature `function(buf) -> string|string[]`
-vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
 local opt = vim.opt
 
 opt.autowrite = true           -- Enable auto write
 opt.clipboard = "unnamedplus"  -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
--- opt.conceallevel = 2           -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true             -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true          -- Enable highlighting of the current line
 opt.expandtab = true           -- Use spaces instead of tabs
@@ -67,7 +55,6 @@ opt.fillchars = {
   eob = " ",
 }
 opt.cursorlineopt = "screenline"
-
 
 -- default hides on launch and unhids based on logic in lualine tabs
 vim.cmd":set showtabline=0"
