@@ -56,7 +56,8 @@ function M.config()
       "vim",
       "vimdoc",
       "yaml",
-      "go"
+      "go",
+      "java"
     },
     highlight = { enable = true },
     indent = { enable = true },
