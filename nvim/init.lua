@@ -15,6 +15,7 @@ spec "user.cmp"
 
 -- ui
 spec "user.colorschemes.kanagawa"
+-- spec "user.colorschemes.rosepine"
 -- spec "user.colorschemes.github"
 -- spec "user.colorschemes.midnight"
 -- spec "user.colorschemes.darkplus"
