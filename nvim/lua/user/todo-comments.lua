@@ -8,10 +8,12 @@ local M = {
   config = true,
   event = "BufEnter",
   opts = {
+    signs = false,
     keywords = {
       PB = {
         color = "info",
       },
+
     },
   },
     -- stylua: ignore
