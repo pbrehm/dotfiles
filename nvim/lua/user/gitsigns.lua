@@ -39,6 +39,23 @@ M.config = function()
         text = icons.ui.BoldLineMiddle,
       },
     },
+    signs_staged = {
+      add = {
+        text = icons.ui.BoldLineMiddle,
+      },
+      change = {
+        text = icons.ui.BoldLineDashedMiddle,
+      },
+      delete = {
+        text = icons.ui.Triangle,
+      },
+      topdelete = {
+        text = icons.ui.Triangle,
+      },
+      changedelete = {
+        text = icons.ui.BoldLineMiddle,
+      },
+    },
     watch_gitdir = {
       interval = 1000,
       follow_files = true,
