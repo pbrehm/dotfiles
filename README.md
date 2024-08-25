@@ -28,8 +28,8 @@ ln -s ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 
 - starship (https://starship.rs/)
 ```
-ln -s ~/dotfiles/.starship.toml ~/.config/starship.toml
-.config/starship.toml -> /home/pbrehm/dotfiles/starship.toml
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+~/.config/starship.toml -> /home/pbrehm/dotfiles/starship.toml
 ```
 
 
