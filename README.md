@@ -44,6 +44,12 @@ ln -s ~/dotfiles/alacrity/.alacrity ~/.alacritty
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
+- debian set emoji fallback font for CaskaydiaCove Nerd Font Mono font family
+```
+ln -s ~/dotfiles/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
+```
+
+
 In windows terminal, I like "Tango dark"
 
 get nerd fonts here
