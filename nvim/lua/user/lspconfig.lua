@@ -31,7 +31,7 @@ local M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "folke/neodev.nvim",
+    -- "folke/neodev.nvim",
     "yioneko/nvim-vtsls",
     {
       "dmmulroy/tsc.nvim",
@@ -163,7 +163,7 @@ function M.config()
     "jsonls",
     "eslint",
     "yamlls",
-    "gopls"
+    "gopls",
   }
 
   local default_diagnostic_config = {
@@ -196,7 +196,7 @@ function M.config()
     vim.fn.sign_define(sign.name, {
       texthl = sign.name,
       -- text = sign.text,
-      numhl = sign.name
+      numhl = sign.name,
     })
   end
 
@@ -215,9 +215,9 @@ function M.config()
       opts = vim.tbl_deep_extend("force", settings, opts)
     end
 
-    if server == "lua_ls" then
-      require("neodev").setup {}
-    end
+    -- if server == "lua_ls" then
+    --   require("neodev").setup {}
+    -- end
 
     lspconfig[server].setup(opts)
   end

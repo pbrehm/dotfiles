@@ -12,6 +12,7 @@ spec "user.mason"
 spec "user.lspconfig"
 spec "user.conform"
 spec "user.cmp"
+spec "user.lazydev"
 
 -- ui
 spec "user.colorschemes.kanagawa"
