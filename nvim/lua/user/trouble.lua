@@ -1,6 +1,5 @@
 local M = {
   "folke/trouble.nvim",
-  --  commit = "a8264a65a0b894832ea642844f5b7c30112c458f", -- PB I do not like the new dark highlight and it broke todo comments. using old commit for now
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
