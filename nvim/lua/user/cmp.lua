@@ -43,6 +43,7 @@ function M.config()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   require("luasnip.loaders.from_vscode").lazy_load { paths = "./snippets/vscode-jest-snippets-custom" }
+  require("luasnip.loaders.from_vscode").lazy_load(); -- loads friendly-snippets
 
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
