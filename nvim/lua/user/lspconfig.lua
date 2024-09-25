@@ -85,6 +85,17 @@ M.on_attach = function(client, bufnr)
     toggle.diagnostics_buffer(false)
   end
 
+  -- vim.notify(vim.inspect(client.workspace_folders[1].name))
+  -- vim.notify(vim.inspect(vim.fn.bufname(bufnr)))
+  -- disable diagnostics when eslint lsp attaches and path includes node modules
+  -- this is because esllint frequently has errors in node modules since it is build differently
+  if string.find(cmd, "vscode%-eslint%-language%-server") and string.find(vim.fn.bufname(bufnr), "node_modules") then
+    -- vim.notify("disable diagnostics for bufnr" .. bufnr)
+    local toggle = require "user.util.toggle"
+    toggle.diagnostics_buffer(false)
+  end
+
+
   -- if client.supports_method "textDocument/inlayHint" then
   -- vim.lsp.inlay_hint.enable(bufnr, true)
   -- end
