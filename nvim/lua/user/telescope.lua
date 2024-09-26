@@ -76,6 +76,7 @@ function M.config()
       -- make next and previous use same actions to be consistent
       -- I expect tab and <C-n> to go the same direction
       -- i = {
+      --   ["<C-f>"] = actions.to_fuzzy_refine, -- this is a handy function I may use some other time
       --   ["<C-n>"] = actions.move_selection_worse,
       --   ["<C-p>"] = actions.move_selection_better,
       -- },
