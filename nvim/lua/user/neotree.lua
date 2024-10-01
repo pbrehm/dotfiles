@@ -34,7 +34,12 @@ function M.config()
         ["C"] = "close_all_nodes",
         ["c"] = "close_node",
         ["<space>"] = "none",
-        ["<bs>"] = "none" -- disabled since easy to accientl press on new keyboard but there is no undo function
+        ["<bs>"] = "none", -- disabled since easy to accientl press on new keyboard but there is no undo function
+        ["M"] = function(state) -- mark a file with grapple
+          local node = state.tree:get_node()
+          -- require("grapple").tag({ path = node.path })
+          require("grapple").toggle({ path = node.path })
+        end
       },
     },
     filesystem = {
