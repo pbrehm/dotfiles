@@ -24,6 +24,7 @@ function M.config()
       ["sql"] = { "sql_formatter" },
       ["lua"] = { "stylua" },
       ["go"] = { "gofmt" },
+      ["java"] = { "clang-format" },
     },
   }
   local wk = require "which-key"

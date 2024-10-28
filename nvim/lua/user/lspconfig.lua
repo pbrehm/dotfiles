@@ -58,6 +58,7 @@ local M = {
         }
       end,
     },
+    "nvim-java/nvim-java",
   },
 }
 
@@ -94,7 +95,6 @@ M.on_attach = function(client, bufnr)
     local toggle = require "user.util.toggle"
     toggle.diagnostics_buffer(false)
   end
-
 
   -- if client.supports_method "textDocument/inlayHint" then
   -- vim.lsp.inlay_hint.enable(bufnr, true)
@@ -175,6 +175,7 @@ function M.config()
     "eslint",
     "yamlls",
     "gopls",
+    "jdtls",
   }
 
   local default_diagnostic_config = {
@@ -229,6 +230,12 @@ function M.config()
     -- if server == "lua_ls" then
     --   require("neodev").setup {}
     -- end
+
+    if server == "jdtls" then
+      require("java").setup {
+        -- Your custom jdtls settings goes here
+      }
+    end
 
     lspconfig[server].setup(opts)
   end

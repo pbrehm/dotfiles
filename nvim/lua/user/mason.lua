@@ -16,7 +16,8 @@ function M.config()
     "jsonls",
     "eslint",
     "yamlls",
-    "gopls"
+    "gopls",
+    "jdtls",
   }
 
   require("mason-tool-installer").setup {
@@ -26,6 +27,7 @@ function M.config()
       "eslint_d",
       "sql-formatter",
       "stylua",
+      "clang-format",
 
       -- debugger required for dap with typescript
       "js-debug-adapter",
