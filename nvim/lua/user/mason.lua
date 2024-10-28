@@ -18,6 +18,7 @@ function M.config()
     "yamlls",
     "gopls",
     "jdtls",
+    "lemminx"
   }
 
   require("mason-tool-installer").setup {

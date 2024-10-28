@@ -176,6 +176,7 @@ function M.config()
     "yamlls",
     "gopls",
     "jdtls",
+    "lemminx"
   }
 
   local default_diagnostic_config = {
