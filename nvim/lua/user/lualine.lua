@@ -78,13 +78,20 @@ function M.config()
     -- path is the relevent key
     local current_file_path = vim.fn.fnamemodify(vim.fn.expand "%:p", ":.")
     local ft = vim.bo.filetype
+    local showTabLine = vim.opt.showtabline:get()
     -- do not show line if no harpoons, if only 1 tab or if we are on dadshboard
     if --[[ ft == "dashboard" or  ]]
       tags_length == 0 and #vim.fn.gettabinfo() == 1
     then
+      if showTabLine ~= 0 then
       vim.cmd ":set showtabline=0"
+      -- print("showtabline=0")
+      end
     else
+      if showTabLine ~= 2 then
       vim.cmd ":set showtabline=2"
+      -- print("showtabline=2")
+      end
     end
     for index = 1, tags_length do
       local grapple_file_path = tags[index].path
