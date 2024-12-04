@@ -106,13 +106,13 @@ M.keys = {
     end,
     desc = "Pause",
   },
-  {
-    "<leader>dr",
-    function()
-      require("dap").repl.toggle()
-    end,
-    desc = "Toggle REPL",
-  },
+  -- {
+  --   "<leader>dr",
+  --   function()
+  --     require("dap").repl.toggle()
+  --   end,
+  --   desc = "Toggle REPL",
+  -- },
   {
     "<leader>ds",
     function()
@@ -149,9 +149,20 @@ M.dependencies = {
     "rcarriga/nvim-dap-ui",
       -- stylua: ignore
       keys = {
-        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-        { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
-      },
+        { "<leader>dr",
+        function() require("dapui").open({ reset = true })
+          local toggle = require "user.util.toggle"
+          toggle.dap_set_state(true);
+          end,
+        desc = "Dap UI Reset" },
+
+        { "<leader>du", function() require("dapui").toggle({ })
+          local toggle = require "user.util.toggle"
+          toggle.dap_toggle_state();
+          end, desc = "Dap UI" },
+
+            { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+          },
     -- opts = {
     --   adapters = {},
     -- },
@@ -163,6 +174,9 @@ M.dependencies = {
       dapui.setup(opts)
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open {}
+        local toggle = require "user.util.toggle"
+        toggle.dap_set_state(true);
+
       end
       -- only automate the openeing of the debug adapter since the termination event is triggered many times cuasing flashing
       -- dap.listeners.before.event_terminated["dapui_config"] = function(a) -- this one gets triggered a bunch

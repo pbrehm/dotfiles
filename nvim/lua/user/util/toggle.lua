@@ -52,4 +52,31 @@ function M.relativeLineNumbers()
     vim.notify "relative line number enabled"
   end
 end
+
+-- the following functions are to maintain state of dap ui window so we can open and close it explicitly
+-- we do this because the events provided open and close it many times.
+-- Also, when trouble opens, it messes up dap ui.
+-- so we check if dap ui is opened and close it when opening trouble on test completion
+
+-- Variable to track the DAP UI state
+local dapui_open = false
+
+-- Function to set the state
+function M.dap_set_state(state)
+  dapui_open = state
+  -- print("dapui_open = " .. tostring(dapui_open))
+end
+
+-- Function to toggle the state
+function M.dap_toggle_state()
+  dapui_open = not dapui_open
+  -- print("dapui_open = " .. tostring(dapui_open))
+  return dapui_open
+end
+
+-- Function to check the state
+function M.dap_is_open()
+  return dapui_open
+end
+
 return M

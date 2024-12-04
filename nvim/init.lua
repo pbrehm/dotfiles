@@ -68,7 +68,7 @@ spec "user.gitdiff"
 spec "user.lazygit"
 
 -- test
-spec "user.test"
 spec "user.dap"
+spec "user.test" -- test code depends on dap to toggling trouble window
 
 require "user.config.lazy"

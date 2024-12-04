@@ -2,7 +2,7 @@ local M = {
   "nvim-neotest/neotest",
   dependencies = {
     "haydenmeade/neotest-jest",
-    "nvim-neotest/nvim-nio"
+    "nvim-neotest/nvim-nio",
   },
   keys = {
     {
@@ -144,6 +144,14 @@ function M.config()
     output = { open_on_run = true },
     quickfix = {
       open = function()
+        -- this code requires dap.
+        local toggle = require "user.util.toggle"
+        if toggle.dap_is_open() then
+          local dapui = require "dapui"
+          dapui.close {}
+          toggle.dap_set_state(false)
+        end
+
         require("trouble").open { mode = "quickfix", focus = false }
       end,
     },
