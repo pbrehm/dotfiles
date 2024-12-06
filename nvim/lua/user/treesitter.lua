@@ -57,7 +57,7 @@ function M.config()
       "vimdoc",
       "yaml",
       "go",
-      "java"
+      "java",
     },
     highlight = { enable = true },
     indent = { enable = true },
@@ -142,8 +142,13 @@ function M.config()
   }
 end
 
-return M
+M.keys = {
+  {
+    "<leader>ut",
+    -- "<cmd>:write | edit | TSBufEnable highlight<cr>",
+    "<cmd>TSBufEnable highlight<cr>",
+    desc = "Treesitter reset highlighting",
+  },
+}
 
--- TODO: consider adding other treesitter plugins
--- nvim-treesitter-textopbejts
--- nvim-treesitter-context
+return M

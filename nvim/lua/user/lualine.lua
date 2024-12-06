@@ -14,7 +14,7 @@ function M.toggle_truncate()
 end
 
 function M.config()
-  vim.keymap.set("n", "<leader>ut", M.toggle_truncate, { desc = "Toggle tabline harpoon path truncation" })
+  -- vim.keymap.set("n", "<leader>ut", M.toggle_truncate, { desc = "Toggle tabline harpoon path truncation" })
   -- kanagawa colors
   vim.cmd "highlight HarpoonNumberActive guifg=#FF9E3B"
   vim.cmd "highlight HarpoonActive guifg=#FF9E3B"
