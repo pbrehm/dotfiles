@@ -65,6 +65,13 @@ M.keys = {
     desc = "Step Into",
   },
   {
+    "<M-i>",
+    function()
+      require("dap").step_into()
+    end,
+    desc = "Step Into",
+  },
+  {
     "<leader>dj",
     function()
       require("dap").down()
@@ -93,7 +100,21 @@ M.keys = {
     desc = "Step Out",
   },
   {
+    "<M-O>",
+    function()
+      require("dap").step_out()
+    end,
+    desc = "Step Out",
+  },
+  {
     "<leader>do",
+    function()
+      require("dap").step_over()
+    end,
+    desc = "Step Over",
+  },
+  {
+    "<M-o>",
     function()
       require("dap").step_over()
     end,
