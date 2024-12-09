@@ -90,7 +90,9 @@ plugins=(
 # Ctrl+t	Recursively search for the filename in the $PWD
 # Alt+c	Recursively search for a directory name under the $PWD, and cd into the selected directory
 source $ZSH/oh-my-zsh.sh
-
+# do not include node_modules or .git
+export FZF_ALT_C_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -type d -print'
+export FZF_CTRL_T_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
