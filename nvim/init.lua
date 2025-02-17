@@ -35,7 +35,7 @@ spec "user.colorizer"
 -- editor
 spec "user.telescope"
 spec "user.trouble"
-spec "user.matchup"
+-- spec "user.matchup"
 spec "user.spectre"
 spec "user.mini-surround"
 spec "user.ufo"
