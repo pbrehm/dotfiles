@@ -249,6 +249,28 @@ M.dependencies = {
   },
 }
 
+
+--- Gets a path to a package in the Mason registry.
+--- Prefer this to `get_package`, since the package might not always be
+--- available yet and trigger errors.
+---@param pkg string
+---@param path? string
+---@param opts? { warn?: boolean }
+function M.get_pkg_path(pkg, path, opts)
+  pcall(require, "mason") -- make sure Mason is loaded. Will fail when generating docs
+  local root = vim.env.MASON or (vim.fn.stdpath("data") .. "/mason")
+  opts = opts or {}
+  opts.warn = opts.warn == nil and true or opts.warn
+  path = path or ""
+  local ret = root .. "/packages/" .. pkg .. "/" .. path
+  if opts.warn and not vim.loop.fs_stat(ret) and not require("lazy.core.config").headless() then
+    M.warn(
+      ("Mason package path not found for **%s**:\n- `%s`\nYou may need to force update the package."):format(pkg, path)
+    )
+  end
+  return ret
+end
+
 function M.config()
   local icons = require "user.resources.icons"
   vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
@@ -271,8 +293,7 @@ function M.config()
         command = "node",
         -- 💀 Make sure to update this path to point to your installation
         args = {
-          require("mason-registry").get_package("js-debug-adapter"):get_install_path()
-            .. "/js-debug/src/dapDebugServer.js",
+          M.get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
           "${port}",
         },
       },
