@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -106,3 +107,9 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 --
 -- send pasted over text to void buffer so that I don't lose what I'm pasting
 vim.api.nvim_set_keymap("x", "p", [["_dP]], { noremap = true, silent = true })
+
+-- unmap default lsp keymaps due to conflicts with personal mappings
+unmap("n", "grn");
+unmap("n", "gra");
+unmap("n", "grr");
+unmap("n", "gri");
