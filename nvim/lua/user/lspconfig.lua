@@ -179,16 +179,21 @@ function M.config()
     "lemminx"
   }
 
-  local default_diagnostic_config = {
+  local diagnostic_config = {
     signs = {
-      active = true,
-      values = {
-        { name = "DiagnosticSignError", text = icons.diagnostics.BoldError },
-        { name = "DiagnosticSignWarn", text = icons.diagnostics.BoldWarning },
-        { name = "DiagnosticSignHint", text = icons.diagnostics.BoldHint },
-        { name = "DiagnosticSignInfo", text = icons.diagnostics.BoldInformation },
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.HINT] = "",
+          [vim.diagnostic.severity.INFO] = "",
+        },
+        numhl = {
+          [vim.diagnostic.severity.WARN] = "WarningMsg",
+          [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+          [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+          [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+        },
       },
-    },
     virtual_text = true,
     update_in_insert = false,
     underline = true,
@@ -203,15 +208,7 @@ function M.config()
     },
   }
 
-  vim.diagnostic.config(default_diagnostic_config)
-
-  for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), "signs", "values") or {}) do
-    vim.fn.sign_define(sign.name, {
-      texthl = sign.name,
-      -- text = sign.text,
-      numhl = sign.name,
-    })
-  end
+  vim.diagnostic.config(diagnostic_config)
 
   -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
   -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
