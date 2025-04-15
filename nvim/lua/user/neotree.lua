@@ -27,6 +27,10 @@ local M = {
 }
 
 function M.config()
+  local function on_move(data)
+    Snacks.rename.on_rename_file(data.source, data.destination)
+  end
+  local events = require("neo-tree.events")
   require("neo-tree").setup {
     window = {
       mappings = {
@@ -56,6 +60,8 @@ function M.config()
           end
         end,
       },
+      { event = events.FILE_MOVED, handler = on_move },
+      { event = events.FILE_RENAMED, handler = on_move },
     },
   }
 end

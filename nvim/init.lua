@@ -3,6 +3,9 @@ require "user.config.options"
 require "user.config.keymaps"
 require "user.config.autocmds"
 
+-- snacks
+spec "user.snacks"
+
 -- treesitter
 spec "user.treesitter"
 spec "user.treesitter-context"
@@ -22,7 +25,6 @@ spec "user.colorschemes.kanagawa"
 -- spec "user.colorschemes.darkplus"
 -- spec "user.colorschemes.moonfly"
 spec "user.neotree"
-spec "user.nvim-lsp-file-operations" -- gives neo tree lsp rename integration. must be loaded after neotree
 spec "user.indentline"
 -- spec "user.mini-indentscope"
 spec "user.mini-icons"
