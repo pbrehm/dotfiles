@@ -15,6 +15,8 @@ function M.config()
       ["less"] = { "prettierd", "eslint_d" },
       ["html"] = { "prettierd", "eslint_d" },
       ["json"] = { "prettierd", "eslint_d" },
+      -- Override to allow formatting of big file. Helpful for big json file. May require async
+      ["bigfile"] = { "prettierd", "eslint_d" },
       ["jsonc"] = { "prettierd", "eslint_d" },
       ["yaml"] = { "prettierd", "eslint_d" },
       ["markdown"] = { "prettierd", "eslint_d" },
@@ -32,7 +34,9 @@ function M.config()
     {
       "<leader>cf",
       function()
-        require("conform").format()
+        require("conform").format(
+          -- { async = true }
+        )
       end,
       desc = "Format",
       mode = { "v", "n" },
