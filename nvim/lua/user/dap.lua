@@ -162,6 +162,13 @@ M.keys = {
     end,
     desc = "Debug Nearest",
   },
+  {
+    "<leader>tD",
+    function()
+      require("neotest").run.run{ suite = true, strategy = "dap" }
+    end,
+    desc = "Debug All Test files",
+  },
 }
 
 M.dependencies = {
