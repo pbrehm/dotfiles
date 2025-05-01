@@ -166,3 +166,13 @@ KEYTIMEOUT=1
 eval "$(starship init zsh)"
 
 export PATH=$PATH:/usr/local/go/bin
+
+# assuming that rbenv was installed to `~/.rbenv`
+FPATH=~/.rbenv/completions:"$FPATH"
+
+autoload -U compinit
+compinit
+
+# Added by `rbenv init` on Tue Apr 15 11:58:36 CDT 2025
+eval "$(rbenv init - --no-rehash zsh)"
+export IRBRC=~/.irbrc  # ensures custom irb config is loaded

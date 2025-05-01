@@ -178,7 +178,11 @@ function M.config()
     "yamlls",
     "gopls",
     "jdtls",
-    "lemminx"
+    "lemminx",
+    "ruby_lsp",
+    -- "rubocop",
+    "standardrb",
+    -- "sorbet"
   }
 
   local diagnostic_config = {
@@ -217,6 +221,7 @@ function M.config()
   -- require("lspconfig.ui.windows").default_options.border = "rounded"
 
   for _, server in pairs(servers) do
+    -- print("server = " .. server)
     local opts = {
       on_attach = M.on_attach,
       capabilities = M.common_capabilities(),
@@ -237,8 +242,12 @@ function M.config()
       }
     end
 
+    -- if server == "ruby_lsp" then
+    --   opts.cmd = { "bundle", "exec", "ruby-lsp" }
+    -- end
     lspconfig[server].setup(opts)
   end
+
 end
 
 return M

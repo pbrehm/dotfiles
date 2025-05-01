@@ -58,6 +58,7 @@ function M.config()
       "yaml",
       "go",
       "java",
+      "ruby"
     },
     highlight = { enable = true },
     indent = { enable = true },

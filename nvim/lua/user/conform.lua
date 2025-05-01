@@ -27,6 +27,8 @@ function M.config()
       ["lua"] = { "stylua" },
       ["go"] = { "gofmt" },
       ["java"] = { "clang-format" },
+      ["ruby"] = { "standardrb" },
+      -- ["ruby"] = { "rubocop" },
     },
   }
   local wk = require "which-key"
