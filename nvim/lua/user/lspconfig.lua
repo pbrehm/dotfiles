@@ -177,7 +177,7 @@ function M.config()
     "eslint",
     "yamlls",
     "gopls",
-    -- "jdtls",
+    "jdtls",
     "lemminx",
     "ruby_lsp",
     -- "rubocop",
@@ -236,11 +236,11 @@ function M.config()
     --   require("neodev").setup {}
     -- end
 
-    if server == "jdtls" then
-      require("java").setup {
-        -- Your custom jdtls settings goes here
-      }
-    end
+    -- if server == "jdtls" then
+    --   require("java").setup {
+    --     -- Your custom jdtls settings goes here
+    --   }
+    -- end
 
     -- if server == "ruby_lsp" then
     --   opts.cmd = { "bundle", "exec", "ruby-lsp" }
