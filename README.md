@@ -34,7 +34,7 @@ ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 
 
 ```
-ln -s ~/dotfiles/alacrity/.alacrity ~/.alacritty
+ln -s ~/dotfiles/alacritty/.alacritty.toml ~/.alacritty.toml
 .alacritty -> /home/pbrehm/dotfiles/alacritty/.alacritty
 ```
 
