@@ -178,10 +178,10 @@ function M.config()
     "yamlls",
     "gopls",
     "jdtls",
-    "lemminx",
-    "ruby_lsp",
+    -- "lemminx",
+    -- "ruby_lsp",
     -- "rubocop",
-    "standardrb",
+    -- "standardrb",
     -- "sorbet"
   }
 
