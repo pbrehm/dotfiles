@@ -18,7 +18,7 @@ function M.config()
     "gopls",
     "jdtls",
     "lemminx",
-    "ruby_lsp",
+    -- "ruby_lsp",
   }
 
   require("mason-tool-installer").setup {
@@ -29,8 +29,8 @@ function M.config()
       "sql-formatter",
       "stylua",
       "clang-format",
-      "erb-formatter",
-      "erb-lint",
+      -- "erb-formatter",
+      -- "erb-lint",
 
       -- debugger required for dap with typescript
       "js-debug-adapter",
