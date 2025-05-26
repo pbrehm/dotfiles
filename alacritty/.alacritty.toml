@@ -1,0 +1,30 @@
+[general]
+import = ["~/dotfiles/alacritty/win_tango_dark.toml"]
+
+[env]
+TERM = "alacritty"
+
+[window]
+option_as_alt = "Both"
+
+[font]
+size = 15.0
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "CaskaydiaCove Nerd Font Mono"
+style = "Bold Italic"
+
+[mouse]
+hide_when_typing = true
