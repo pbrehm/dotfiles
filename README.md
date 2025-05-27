@@ -95,3 +95,8 @@ then install it
 ```
 tic -x terminfo.src
 ```
+
+alacritty fix font rendering
+```
+defaults write org.alacritty AppleFontSmoothing -int 0
+```
