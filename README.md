@@ -38,8 +38,13 @@ ln -s ~/dotfiles/alacritty/.alacritty.toml ~/.alacritty.toml
 .alacritty -> /home/pbrehm/dotfiles/alacritty/.alacritty
 ```
 
+linux
 ```
  ln -s ~/dotfiles/lazygit/config.yml ~/.config/lazygit/config.yml
+```
+mac os
+```
+ln -s ~/dotfiles/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml 
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
