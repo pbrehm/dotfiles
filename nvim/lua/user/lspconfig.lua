@@ -176,7 +176,7 @@ function M.config()
     "jsonls",
     "eslint",
     "yamlls",
-    "gopls",
+    -- "gopls",
     "jdtls",
     -- "lemminx",
     -- "ruby_lsp",
